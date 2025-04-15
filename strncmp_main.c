@@ -1,5 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   strncmp_main.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 19:27:37 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/15 19:28:07 by yuwu             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*
 NAME
        strcmp, strncmp - compare two strings
+       int strncmp(const char *s1, const char *s2, size_t n);
 
 DESCRIPTION
        The  strcmp()  function compares the two strings s1 and s2.  The locale
@@ -20,17 +34,22 @@ RETURN VALUE
        The strcmp() and strncmp() functions return an integer less than, equal
        to, or greater than zero if s1 (or the first n bytes thereof) is found,
        respectively, to be less than, to match, or be greater than s2.
+*/
 
-
+#include <stddef.h>
 #include <string.h>
+#include <stdio.h>
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 int	main(void)
 {
-	int	n;
-	int	r;
+	size_t	n;
 
 	n = 6;
-	s1[] = "hellosummer";
-	s2[] = "helloseven";
-	r == 	
+	const char	s1[] = "hellosummer";
+	const char	s2[] = "helloseven";
+	printf("%i\n", strncmp(s1, s2, n));
+	printf("%i\n", ft_strncmp(s1, s2, n));
+	return 0;
 }

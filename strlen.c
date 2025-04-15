@@ -6,15 +6,18 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 18:36:40 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/14 18:36:47 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/15 19:12:23 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[o])
+	while (str[i])
 		i++;
+	return i;
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 18:40:16 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/14 18:40:26 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/15 21:18:22 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/15 21:19:42 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)	
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	...
 }

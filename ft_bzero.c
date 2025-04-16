@@ -10,17 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-include <stddef.h>
+#include <stddef.h>
 
 void	bzero(void *s, size_t n)
 {
+	char	*temp;	
 	size_t	i;
-	
+
 	i = 0;
-	while ((*s) && (i < n))
+	temp = (char *)s;
+	while (i < n)
 	{
-		*s = '\0';
+		temp[i] = 0;
 		i++;
-		s++;
 	}
 }

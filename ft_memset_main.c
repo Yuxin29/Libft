@@ -30,18 +30,17 @@ void	*ft_memset(void *s, int c, size_t n);
 
 int	main(void)
 {
-	void	*s1;
-	void	*s2;
+	char	s1[100] = " ccccccccccccccc  ";
+	char	s2[100] = " ccccccccccccccc  ";
 	int	c;
 	size_t	n;
 
-	s1 = NULL;
-	s2 = NULL;
 	c = 'a';
 	n = 8;
-	ft_memset(s1, c, n);
-	memset(s2, c, n);
-	printf("%s\n", s1);
-	printf("%s\n", s2);
+	printf("%p\n", s1);
+	printf("%p\n", s2);
+	
+	printf("%p\n", ft_memset(s1, c, n));
+	printf("%p\n", memset(s2, c, n));
 	return (0);
 }

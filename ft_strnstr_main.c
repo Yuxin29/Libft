@@ -27,13 +27,24 @@ RETURN VALUES
      If little is an empty string, big is returned; if little occurs nowhere in big, NULL is returned; otherwise a pointer to the first character of the first occurrence of little is returned.
 */
 
+#include <stdio.h>
 #include <stddef.h>
 #include <string.h>
-//(See libbsd(7) for include usage.)
+#include <bsd/string.h>
+//(See libbsd(7) for include usage.)  need to add flag -lbsd when cc
 
-char   *ft_strnstr(const char *big, const char *little, size_t len);
+const char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 int	main(void)
 {
-	...		
+	const char	*big;
+	const char	*little;
+	size_t		len;
+
+	big = "hellosummerboybabyboybyebye";
+	little = "boyba";
+	len = 18;
+	printf("%s\n", ft_strnstr(big, little, len));
+	printf("%s\n", strnstr(big, little, len));
+	return (0);
 }

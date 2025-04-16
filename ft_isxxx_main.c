@@ -10,45 +10,77 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+
 SYNOPSIS
-- isalnum()
-checks for an alphanumeric character;
-- isalpha()
-checks for an alphabetic character; in the standard "C" locale, it is equivalent
-to (isupper(c) || islower(c)).  In some locales, there may be additional charac‐
-ters  for which isalpha() is true—letters which are neither uppercase nor lower‐
-case.
-- isascii()
-checks whether c is a 7-bit unsigned char value that fits into the ASCII charac‐
-ter set.
-- isblank()
-checks for a blank character; that is, a space or a tab.
-- iscntrl()
-checks for a control character.
-- isdigit()
-checks for a digit (0 through 9).
-- islower()
-checks for a lowercase character.
-- isprint()
-checks for any printable character including space.
-- isspace()
-checks for white-space characters.  In the "C" and "POSIX" locales,  these  are:
-space,  form-feed ('\f'), newline ('\n'), carriage return ('\r'), horizontal tab
-('\t'), and vertical tab ('\v').
-- isupper()
-checks for an uppercase letter.
-- isxdigit()
-checks for hexadecimal digits, that is, one of
-0 1 2 3 4 5 6 7 8 9 a b c d e f A B C D E F.
+       int isalnum(int c);
+       int isalpha(int c);
+       int iscntrl(int c);
+       int isdigit(int c);
+       int isgraph(int c);
+       int islower(int c);
+       int isprint(int c);
+       int ispunct(int c);
+       int isspace(int c);
+       int isupper(int c);
+       int isxdigit(int c);
 
+       int isascii(int c);
+       int isblank(int c);
+
+ DESCRIPTION
+       These functions check whether c, which must have the value of an unsigned char or EOF, falls into
+       a certain character class according to the specified locale.  The functions without the "_l" suf‐
+       fix perform the check based on the current locale.
+       
 RETURN VALUE
-       The values returned are nonzero if the character c falls into  the  tested  class,  and
-       zero if not.
-
-NOTES
-       The standards require that the argument c for these functions is either EOF or a  value
-       that is representable in the type unsigned char.  If the argument c is of type char, it
-       must be cast to unsigned char, as in the following example:
+       The values returned are nonzero if the character c falls into the tested class, and zero if not.
+*/
 
 #include <ctype.h>
+#include <stddef.h>
+#include <stdio.h>
 
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
+int	ft_isalnum(int c);
+int	ft_isascii(int c);
+int	ft_isprint(int c);
+
+int	main(void)
+{
+	int	c1 = 'a';
+	int	c2 = '1';
+	int	c3 = '/';
+	int	c4 = ' ';
+	
+	printf("test_isalpha");
+	printf("%i\n", ft_isalpha(c1));
+	printf("\n");
+	printf("%i\n", isalpha(c1));
+	printf("\n");
+	printf("%i\n", ft_isalpha(c2));
+	printf("%i\n", isalpha(c2));
+	printf("\n");
+	printf("test_isdigit");
+	printf("%i\n", ft_isdigit(c1));
+	printf("%i\n", isdigit(c1));
+	printf("%i\n", ft_isdigit(c2));
+	printf("%i\n", isdigit(c2));
+	printf("\n");
+	printf("test_isalnum");
+	printf("%i\n", ft_isalnum(c1));
+	printf("%i\n", isalnum(c2));
+	printf("%i\n", ft_isalnum(c1));
+	printf("%i\n", isalnum(c2));
+	printf("%i\n", ft_isalnum(c3));
+	printf("%i\n", isalnum(c3));
+	printf("\n");
+	printf("test_isprint");
+	printf("%i\n", ft_isprint(c3));
+	printf("%i\n", isprint(c3));
+	printf("%i\n", ft_isprint(c4));
+	printf("%i\n", isprint(c4));
+	printf("\n");
+	return (0);
+}

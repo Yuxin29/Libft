@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 18:40:45 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/14 18:40:49 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/17 15:36:57 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/17 15:37:52 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_atoi(const char *nptr)
 {
-	size_t	j;
-	size_t	k;
-	
-	j = 0;
-	k = 0;
-	while (src[k])
-		k++;
-	if (size < 1)
-		return (size);
-	while ((src[j]) && (j + 1 < size))
-	{	
-		dst[j] = src[j];
-		j++;
+	int	i;
+	int	out;
+
+	i = 0;
+	out = 0;
+	if ((nptr[i] < '0') && (nptr[i] > '9'))
+		return (0);
+	while (('0' <= nptr[i]) && (nptr[i] <= '9'))
+	{
+		out = out * 10 + (nptr[i] - '0');
+		i++;
 	}
-	dst[j] = '\0';
-	return (k);
+	return (out);
 }

@@ -42,6 +42,7 @@ RETURN VALUES
 #include <stddef.h>
 #include <string.h>
 #include <stdio.h>
+#include <bsd/string.h>
 //(See libbsd(7) for include usage.)  -lbsd
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
@@ -49,11 +50,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 int	main(void)
 {
 	char		dst[] = "aaaaaaaaaaa";
-	const char	src[] = "summer";
+	const char	src[] = "summerhelloo";
 	size_t		size = 3;
 
 	printf("%s\n", dst);
-	printf("%zu\n", ft_strlcpy(dst, src, size));
+	//printf("%zu\n", ft_strlcpy(dst, src, size));
+	printf("%zu\n", strlcpy(dst, src, size));
 	printf("%s\n", dst);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 16:05:21 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/17 16:07:51 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/17 18:43:27 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(void)
 	const char	test[] = "hellosummerhowryou";
 	int		c = 'u';
 
-	//printf("%s\n", ft_strchr(test, c));
+	printf("%s\n", ft_strchr(test, c));
 	printf("%s\n", strchr(test, c));
 	return (0);
 }

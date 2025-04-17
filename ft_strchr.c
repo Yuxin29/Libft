@@ -6,18 +6,20 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 16:08:40 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/17 16:17:11 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/17 17:43:33 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*strchr(const char *s, int c)
 {
-	if (c == '\0')
-		return (s);
+	char	cc;
+	char	*temp;
+
+	cc = (char) c;
 	while (*s)
 	{
-		if (*s == c)
-			return (s);
+		if (*s == cc)
+			return char *temp(&(*s));
 		s++;
 	}
 	return NULL;

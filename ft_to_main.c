@@ -6,10 +6,9 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 20:26:09 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/15 20:41:03 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/17 17:38:23 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 /*
 NAME
        toupper, tolower, toupper_l, tolower_l - convert uppercase or lowercase

@@ -6,7 +6,7 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 21:07:10 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/15 21:10:22 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/18 19:26:11 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 int	main(void)
 {
-	char	dest[100];
+	char		dest[100];
 	const char	src[100];
-	size_t	n;
-	char	*test1;
-	char	*test2;
+	size_t		n;
+	char		*test1;
+	char		*test2;
 
 	dest = "aaaaa";
 	src = "summer";

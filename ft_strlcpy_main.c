@@ -6,7 +6,7 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 13:03:17 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/17 13:06:07 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/18 19:27:39 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,11 @@ int	main(void)
 {
 	char		dst[];
 	const char	src[];
-	size_t		size = 3;
+	size_t		size;
 
 	dst = "aaaaaaaaaaa";
 	src = "summerhelloo";
+	size = 3;
 	printf("%s\n", dst);
 	printf("%zu\n", ft_strlcpy(dst, src, size));
 	//printf("%zu\n", strlcpy(dst, src, size));

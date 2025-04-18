@@ -1,15 +1,29 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/18 11:38:48 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/18 11:38:55 by yuwu             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 char	*ft_strrchr(const char *s, int c)
 {
-	xxx
+	int	i;
+	char	cc;
+	
+	i = 0;
+	cc = (char) c;
+	while (s[i])
+		i++;
+	while (i > 0)
+	{
+		if (s[i] == cc)
+			return ((char *)( &s[i]));
+		i--;
+	}
+	return ((void *)0);
 }
-
-The strrchr() function returns a pointer to the last occurrence of
-       the character c in the string s.
-
-The strchr() and strrchr() functions return a pointer to the
-       matched character or NULL if the character is not found.  The
-       terminating null byte is considered part of the string, so that if
-       c is specified as '\0', these functions return a pointer to the
-       terminator.

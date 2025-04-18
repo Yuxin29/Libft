@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-NAME
+/*NAME
        strchr, strrchr, strchrnul - locate character in string
 
 SYNOPSIS
@@ -25,11 +24,22 @@ DESCRIPTION
 
 RETURN VALUE
        The strchr() and strrchr() functions return a pointer  to  the  matched
-       character  or NULL if the character is not found.  The terminating null
-       byte is considered part of the string, so that if  c  is  specified  as
+       character  or NULL if the character is not found.  
+       The terminating null byte is considered part of the string, so that if  c  is  specified  as
        '\0', these functions return a pointer to the terminator.
 */
 
 #include <string.h>
+#include <stdio.h>
 
 char	*ft_strrchr(const char *s, int c);
+
+int	main(void)
+{
+	const char	test[100] = "summerhowisyouday";
+	int	c = 'u';
+	
+	printf("%s\n", ft_strrchr(test, c));
+	printf("%s\n", strrchr(test, c));
+	return (0);
+}

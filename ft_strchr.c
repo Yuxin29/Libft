@@ -15,12 +15,13 @@ char	*ft_strchr(const char *s, int c)
 	char	cc;
 
 	cc = (char) c;
-	//it "cashes" the ascii c
 	while (*s)
 	{
 		if (*s == cc)
 			return ((char *) &(*s));
 		s++;
 	}
-	return (0);
+	if (*s == cc)
+		return ((char *) &(*s));
+	return ((void *)0);
 }

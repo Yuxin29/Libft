@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isxxx_main.c                                       :+:      :+:    :+:   */
+/*   ft_isxxx_main.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -25,7 +25,7 @@ SYNOPSIS
        int isupper(int c);
        int isxdigit(int c);
 
-       int isascii(int c);
+       int isascii(int c); checks whether c is a 7-bit unsigned char value that fits into the ASCII character set.
        int isblank(int c);
 
  DESCRIPTION
@@ -54,21 +54,19 @@ int	main(void)
 	int	c3 = '/';
 	int	c4 = ' ';
 	
-	printf("test_isalpha");
+	printf("test_isalpha\n");
 	printf("%i\n", ft_isalpha(c1));
-	printf("\n");
 	printf("%i\n", isalpha(c1));
-	printf("\n");
 	printf("%i\n", ft_isalpha(c2));
 	printf("%i\n", isalpha(c2));
 	printf("\n");
-	printf("test_isdigit");
+	printf("test_isdigit\n");
 	printf("%i\n", ft_isdigit(c1));
 	printf("%i\n", isdigit(c1));
 	printf("%i\n", ft_isdigit(c2));
 	printf("%i\n", isdigit(c2));
 	printf("\n");
-	printf("test_isalnum");
+	printf("test_isalnum\n");
 	printf("%i\n", ft_isalnum(c1));
 	printf("%i\n", isalnum(c2));
 	printf("%i\n", ft_isalnum(c1));
@@ -76,7 +74,7 @@ int	main(void)
 	printf("%i\n", ft_isalnum(c3));
 	printf("%i\n", isalnum(c3));
 	printf("\n");
-	printf("test_isprint");
+	printf("test_isprint\n");
 	printf("%i\n", ft_isprint(c3));
 	printf("%i\n", isprint(c3));
 	printf("%i\n", ft_isprint(c4));

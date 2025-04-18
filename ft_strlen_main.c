@@ -15,10 +15,11 @@ SYNOPSIS
        size_t strlen(const char *s);
 
 DESCRIPTION
-       The strlen() function calculates the length of the string pointed to by s, excluding the terminating null byte ('\0').
+       The strlen() function calculates the length of the string pointed to by s,
+       excluding the terminating null byte ('\0').
 
 RETURN VALUE
-       The strlen() function returns the number of bytes in the string pointed to by s.
+The strlen() function returns the number of bytes in the string pointed to by s.
 */
 
 #include <stddef.h>

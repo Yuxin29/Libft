@@ -44,10 +44,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 int	main(void)
 {
-	size_t		n = 4;
+	size_t		n;
 	const char	s1[] = "hellosummer";
 	const char	s2[] = "helloseven";
 
+	n = 4;
 	printf("%i\n", strncmp(s1, s2, n));
 	printf("%i\n", ft_strncmp(s1, s2, n));
 	return (0);

@@ -6,13 +6,13 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 11:38:48 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/18 11:38:55 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/18 19:04:31 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	cc;
 
 	i = 0;

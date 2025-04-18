@@ -31,11 +31,13 @@ void	ft_bzero(void *s, size_t n);
 
 int	main(void)
 {
-	char	test[100] = "aaaabbbb";
+	char	test[100];
 	size_t	n;
 
+	test = "aaaabbbb";
 	n = 2;
 	printf("%s\n", test);
-	bzero(test, n);
+	ft_bzero(test, n);
 	printf("%s\n", test);
+	return (0);
 }

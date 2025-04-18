@@ -54,11 +54,15 @@ int	ft_isprint(int c);
 
 int	main(void)
 {
-	int	c1 = 'a';
-	int	c2 = '1';
-	int	c3 = '/';
-	int	c4 = ' ';
-	
+	int	c1;
+	int	c2;
+	int	c3;
+	int	c4;
+
+	c1 = 'a';
+	c2 = '1';
+	c3 = '/';
+	c4 = ' ';
 	printf("test_isalpha\n");
 	printf("%i\n", ft_isalpha(c1));
 	printf("%i\n", isalpha(c1));

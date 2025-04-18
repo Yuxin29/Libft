@@ -16,7 +16,6 @@ const char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	s;
 	size_t	i;
-	int	judge;
 
 	s = 0;
 	if (!(*little))
@@ -26,14 +25,9 @@ const char	*ft_strnstr(const char *big, const char *little, size_t len)
 		if (*little == *big)
 		{
 			i = 0;
-			judge = 0;
-			while (little[i])
-			{
-				if (little[i] != big[i])
-					judge = 1;
+			while ((little[i]) && (little[i] == big[i]))
 				i++;
-			}
-			if (judge == 0)
+			if (!(little[i]))
 				return (big);
 		}
 		s++;

@@ -16,8 +16,8 @@ NAME
 SYNOPSIS
        void *memset(void *s, int c, size_t n);
 DESCRIPTION
-       The  memset()  function  fills the first n bytes of the memory area pointed to by s with the con‐
-       stant byte c.
+       The  memset()  function  fills the first n bytes of the memory area 
+       pointed to by s with the constant byte c.
 RETURN VALUE
        The memset() function returns a pointer to the memory area s.
 */
@@ -37,10 +37,11 @@ int	main(void)
 
 	c = 'a';
 	n = 8;
-	printf("%p\n", s1);
-	printf("%p\n", s2);
-	
-	printf("%p\n", ft_memset(s1, c, n));
-	printf("%p\n", memset(s2, c, n));
+	printf("%s\n", s1);
+	printf("%s\n", s2);
+	ft_memset(s1, c, n);
+	printf("%s\n", s1);
+	memset(s2, c, n);
+	printf("%s\n", s2);
 	return (0);
 }

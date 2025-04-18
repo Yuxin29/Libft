@@ -25,16 +25,21 @@ SYNOPSIS
        int isupper(int c);
        int isxdigit(int c);
 
-       int isascii(int c); checks whether c is a 7-bit unsigned char value that fits into the ASCII character set.
+       int isascii(int c); 
+       checks whether c is a 7-bit unsigned char value that 
+       fits into the ASCII character set.
        int isblank(int c);
 
  DESCRIPTION
-       These functions check whether c, which must have the value of an unsigned char or EOF, falls into
-       a certain character class according to the specified locale.  The functions without the "_l" suf‐
+       These functions check whether c, which must have the value of an unsigned 
+       char or EOF, falls into
+       a certain character class according to the specified locale.  
+       The functions without the "_l" suf‐
        fix perform the check based on the current locale.
        
 RETURN VALUE
-       The values returned are nonzero if the character c falls into the tested class, and zero if not.
+       The values returned are nonzero if the character c falls into 
+       the tested class, and zero if not.
 */
 
 #include <ctype.h>

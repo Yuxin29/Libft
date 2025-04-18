@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero_main.c                                       :+:      :+:    :+:   */
+/*   ft_bzero_main.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,7 +16,8 @@ NAME
 SYNOPSIS
        void bzero(void *s, size_t n);
 DESCRIPTION
-       The  bzero()  function erases the data in the n bytes of the memory starting at the location pointed to by s, by writing zeros (bytes con‐
+       The  bzero()  function erases the data in the n bytes of the memory 
+       starting at the location pointed to by s, by writing zeros (bytes con‐
        taining '\0') to that area.
 RETURN VALUE
        None.

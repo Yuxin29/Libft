@@ -45,6 +45,7 @@ RETURN VALUES
 #include <stddef.h>
 #include <string.h>
 #include <stdio.h>
+#include <bsd/string.h>
 //(See libbsd(7) for include usage.)  -lbsd
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -56,7 +57,8 @@ int	main(void)
 	size_t		num = 19;
 
 	printf("%s\n", dst);
-	printf("%zu\n", ft_strlcat(dst, src, num));
+	//printf("%zu\n", ft_strlcat(dst, src, num));
+	printf("%zu\n", strlcat(dst, src, num));
 	printf("%s\n", dst);
 	return (0);
 }

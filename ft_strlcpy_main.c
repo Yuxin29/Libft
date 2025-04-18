@@ -17,7 +17,8 @@ NAME
 DESCRIPTION
      The strlcpy() and strlcat() functions copy and concatenate strings respectively.  
      
-     They are designed to be safer, more consistent, and less error prone replacements for strncpy(3) and strncat(3).  
+     They are designed to be safer, more consistent, 
+     and less error prone replacements for strncpy(3) and strncat(3).  
      
      Unlike those functions, strlcpy() and strlcat() take the full size of the buffer (not just the
      length) and guarantee to NUL-terminate the result (as long as size is larger than 0 or, in the case
@@ -54,8 +55,8 @@ int	main(void)
 	size_t		size = 3;
 
 	printf("%s\n", dst);
-	//printf("%zu\n", ft_strlcpy(dst, src, size));
-	printf("%zu\n", strlcpy(dst, src, size));
+	printf("%zu\n", ft_strlcpy(dst, src, size));
+	//printf("%zu\n", strlcpy(dst, src, size));
 	printf("%s\n", dst);
 	return (0);
 }

@@ -12,17 +12,29 @@
 
 #include <stdlib>
 
-void	*calloc(size_t nmemb, size_t size)
-{
-	size_t	n;
-	void	*dest;	
+void	ft_bzero(void *s, size_t n);
 
-	n = 0;
-	dest = NULL;
-	while (n < nmemb)
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	size_t	total;
+	void	*dest;
+	char	*zero;
+
+	total = nmemb * size;
+	if (total == 0)
 	{
-		dest += malloc(size);
-		n++;
+		zero = malloc(sizeof(*zero));
+		*zero = '\0';
+		return (zero);
 	}
+	dest = malloc(total);
+	if (!(dest))
+		return (NULL);
+	ft_bzero(dest, total)
 	return (dest);
 }
+
+/* 
+If the multiplication of nmemb and size would result in integer overflow, 
+then  calloc() returns  an  error.
+*/

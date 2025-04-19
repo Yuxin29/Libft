@@ -41,8 +41,8 @@ int	main(void)
 	char		src[100];
 	size_t		n;
 
-	//dest = "1111111";
-	//src = "abcd";
+	dest = "1111111";
+	src = "abcd";
 	n = 3;
 	printf("%s\n", dest);
 	//ft_memmove(dest, src, n);

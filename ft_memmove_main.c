@@ -6,7 +6,7 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 21:13:16 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/15 21:15:20 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/19 15:21:54 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ SYNOPSIS
        void *memmove(void *dest, const void *src, size_t n);
 
 DESCRIPTION
-The  memmove() function copies n bytes from memory area src to memory area dest.  
+The memmove function copies n bytes from memory area src to memory area dest.  
 The memory areas may overlap: 
          
-copying takes place as though the bytes in src are first copied into a temporary 
-array that does not overlap src or dest, 
+copying takes place as though the bytes in src are first copied into a 
+temporary array that does not overlap src or dest, 
 and the bytes are then copied from the temporary array to dest.
 
 RETURN VALUE
@@ -31,10 +31,22 @@ RETURN VALUE
 
 #include <string.h>
 #include <stddef.h>
+#include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
 int	main(void)
 {
-	...
+	char		dest[100];
+	char		src[100];
+	size_t		n;
+
+	//dest = "1111111";
+	//src = "abcd";
+	n = 3;
+	printf("%s\n", dest);
+	//ft_memmove(dest, src, n);
+	memmove(dest, src, n);
+	printf("%s\n", dest);
+	return (0);
 }

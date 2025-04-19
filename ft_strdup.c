@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 19:14:59 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/18 19:16:33 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/19 15:25:50 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/19 15:39:18 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strdup(const char *s)
 {
-	xx;
+	char	*dup;
+	int		i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	dup = malloc(sizeof(char) * (i + 1));
+	if (!(dup))
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }

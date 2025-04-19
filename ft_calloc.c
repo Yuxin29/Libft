@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 19:14:59 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/18 19:16:33 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/19 15:58:55 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/19 16:20:12 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stdlib>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	*calloc(size_t nmemb, size_t size)
 {
-	xx;
+	size_t	n;
+	void	*dest;	
+
+	n = 0;
+	dest = NULL;
+	while (n < nmemb)
+	{
+		dest += malloc(size);
+		n++;
+	}
+	return (dest);
 }

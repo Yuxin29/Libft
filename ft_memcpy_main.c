@@ -18,7 +18,7 @@ SYNOPSIS
        void *memcpy(void *dest, const void *src, size_t n);
        
 DESCRIPTION
-The  memcpy() function copies n bytes from memory area src to memory area dest.  
+The  memcpy() function copies n bytes from memory area src to memory area dest.
 The memory areas must not overlap.  
 Use memmove(3) if the memory areas do overlap.
 

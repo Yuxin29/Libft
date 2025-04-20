@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 19:14:59 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/19 18:06:21 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/20 11:54:41 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/20 11:57:45 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include <stdio.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char const *s1, char const *set);
+
+int	main(void)
 {
-	char			*sub;
-	unsigned int	n;
+	char const	*l_str;
+	char const	*s_str;
 
-	n = 0;
-	sub = malloc(sizeof(char) * (len + 1));
-	if (!(sub))
-		return (NULL);
-	while (n < len)
-	{
-		sub[n] = s[start + n];
-		n++;
-	}
-	sub[n] = '\0';
-	return (sub);
+	l_str = "Summer how is your day is today a rainy day";
+	s_str = "is";
+	printf("%s\n", ft_strtrim(l_str, s_str));
+	return (0);
 }

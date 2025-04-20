@@ -18,13 +18,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 int	main(void)
 {
-	const char		test;
+	const char		*test;
 	unsigned int	s;
 	size_t			n;
 	char			*result;
 
 	test = "summer how is you day";
-	s = 'h';
+	s = 7;
 	n = 10;
 	result = ft_substr(test, s, n);
 	if (!(result))

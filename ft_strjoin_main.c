@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 19:14:59 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/19 18:06:21 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/20 11:00:39 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/20 11:03:34 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char			*sub;
-	unsigned int	n;
+char	*ft_strjoin(char const *s1, char const *s2);
 
-	n = 0;
-	sub = malloc(sizeof(char) * (len + 1));
-	if (!(sub))
-		return (NULL);
-	while (n < len)
-	{
-		sub[n] = s[start + n];
-		n++;
-	}
-	sub[n] = '\0';
-	return (sub);
+int	main(void)
+{
+	char const	*part1;
+	char const	*part2;
+	
+	part1 = "helloboy";
+	part2 = "Itsarainyday";
+	printf("%s\n", ft_strjoin(part1, part2));
+	return (0);
 }

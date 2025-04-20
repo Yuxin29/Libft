@@ -51,7 +51,7 @@ int	main(void)
 	char	*dest2;
 
 	dest1 = ft_strdup("hellosummer");
-	dest2 = strdup(src);
+	dest2 = strdup("hellosummer");
 	if (dest1)
 		printf("%s\n", dest1);
 	free(dest1);
@@ -60,3 +60,5 @@ int	main(void)
 	free(dest2);
 	return (0);
 }
+
+/* Attention: to memleak here: Valgrind */

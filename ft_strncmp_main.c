@@ -12,7 +12,6 @@
 
 /*
 NAME
-       strcmp, strncmp - compare two strings
        int strncmp(const char *s1, const char *s2, size_t n);
 
 DESCRIPTION
@@ -36,7 +35,8 @@ RETURN VALUE
        respectively, to be less than, to match, or be greater than s2.
 */
 
-#include <stddef.h>
+#include "libft.h"
+
 #include <string.h>
 #include <stdio.h>
 
@@ -45,12 +45,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n);
 int	main(void)
 {
 	size_t		n;
-	const char	s1[];
-	const char	s2[];
+	const char	*s1;
+	const char	*s2;
 
 	s1 = "hellosummer";
 	s2 = "helloseven";
-	n = 4;
+	n = 7;
 	printf("%i\n", strncmp(s1, s2, n));
 	printf("%i\n", ft_strncmp(s1, s2, n));
 	return (0);

@@ -35,11 +35,12 @@ RETURN VALUES
      of little is returned.
 */
 
+#include "libft.h"
+
 #include <stdio.h>
-#include <stddef.h>
 #include <string.h>
 #include <bsd/string.h>
-//(See libbsd(7) for include usage.)  need to add flag -lbsd when cc
+// -lbsd when cc
 
 const char	*ft_strnstr(const char *big, const char *little, size_t len);
 
@@ -50,8 +51,8 @@ int	main(void)
 	size_t		len;
 
 	big = "hellosummerboybabyboybyebye";
-	little = "boyba";
-	len = 4;
+	little = "boyba++";
+	len = 24;
 	printf("%s\n", ft_strnstr(big, little, len));
 	printf("%s\n", strnstr(big, little, len));
 	return (0);

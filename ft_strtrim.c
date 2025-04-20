@@ -41,7 +41,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	set_len;
 	char	*trimed_extra;
 	char	*trimed;
-	size_t  n;
+	size_t	n;
 	size_t	m;
 
 	n = 0;
@@ -53,7 +53,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		if (&s1[n] == ft_strstr(&s1[n], set))
 			m += set_len;
-		trimed_extra[n] = s1[m]; 
+		trimed_extra[n] = s1[m];
 		n++;
 		m++;
 	}

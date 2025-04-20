@@ -38,11 +38,11 @@ char	*ft_strchr(const char *s, int c);
 
 int	main(void)
 {
-	const char	test[];
+	const char	*test;
 	int			c;
 
 	test = "hellosummerhowryou";
-	c = 'u';
+	c = 'x';
 	printf("%s\n", ft_strchr(test, c));
 	printf("%s\n", strchr(test, c));
 	return (0);

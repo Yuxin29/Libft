@@ -54,16 +54,20 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 int	main(void)
 {
-	char		dst[];
-	const char	src[];
+	char		*dst1;
+	char		*dst2;
+	const char	*src;
 	size_t		size;
 
-	dst = "aaaaaaaaaaa";
+	dst1 = "aaaaaaaaaaa";
+	dst2 = "aaaaaaaaaaa";
 	src = "summerhelloo";
 	size = 3;
-	printf("%s\n", dst);
-	printf("%zu\n", ft_strlcpy(dst, src, size));
-	//printf("%zu\n", strlcpy(dst, src, size));
-	printf("%s\n", dst);
+	printf("%s\n", ds1);
+	printf("%zu\n", ft_strlcpy(dst1, src, size));
+	printf("%s\n", dst1);
+	printf("%s\n", dst2);
+	printf("%zu\n", ft_strlcpy(dst2, src, size));
+	printf("%s\n", dst2);
 	return (0);
 }

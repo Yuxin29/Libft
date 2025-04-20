@@ -20,7 +20,7 @@ int	main(void)
 {
 	char const	*part1;
 	char const	*part2;
-	
+
 	part1 = "helloboy";
 	part2 = "Itsarainyday";
 	printf("%s\n", ft_strjoin(part1, part2));

@@ -37,11 +37,11 @@ char	*ft_strrchr(const char *s, int c);
 
 int	main(void)
 {
-	const char	test[100];
+	const char	*test;
 	int			c;
 
 	test = "summerhowisyourday";
-	c = 'u';
+	c = 'o';
 	printf("%s\n", ft_strrchr(test, c));
 	printf("%s\n", strrchr(test, c));
 	return (0);

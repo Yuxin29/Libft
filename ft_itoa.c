@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-char	*ft_strjoin(char const *s1, char const *s2);
+#include "libft.h"
 
 int	ft_iterative_power(int nb, int power)
 {
@@ -79,7 +78,7 @@ char	*ft_itoa_positive(int n)
 char	*ft_itoa(int n)
 {
 	char	*minus;
-	
+
 	minus = "-";
 	if (n == -2147483648)
 		return (ft_is_special(n));

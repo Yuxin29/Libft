@@ -20,7 +20,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_count_c(char const *s, char c)
 {
 	size_t	c_count;
-	
+
 	c_count = 0;
 	while (*s)
 	{
@@ -28,16 +28,15 @@ size_t	ft_count_c(char const *s, char c)
 			c_count++;
 		s++;
 	}
-	return c_count;
+	return (c_count);
 }
-//It counts how many c:s is going to be in the str.
 
 char	**ft_split(char const *s, char c)
 {
 	size_t	len;
 	size_t	num_of_output;
 	size_t	output;
-	size_t	x; //length of each string
+	size_t	x;
 
 	len = ft_strlen(s);
 	num_of_output = ft_count_c(s, c) + 1;
@@ -47,28 +46,10 @@ char	**ft_split(char const *s, char c)
 		x = 0;
 		while (s[x] != c)
 		{
-			des_output[x] =  s[x]
+			des_output[x] = s[x];
 			x++;
 		}
-		return des_output			
+		return (des_output);	
 		output++;
 	}
 }
-
-
-/*
-Parameters s: 	The string to be split.
-c: 				The delimiter character.
-
-Return value 
-The array of new strings resulting from the split.
-NULL if the allocation fails.
-
-External functs. malloc, free
-Description 
-Allocates memory (using malloc(3)) 
-and returns an array of strings obtained by splitting ’s’ using
-the character ’c’ as a delimiter. 
-The array must end with a NULL pointer.
-*/
-

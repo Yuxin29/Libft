@@ -37,16 +37,19 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 
 int	main(void)
 {
-	char		dest[100];
-	char		src[100];
+	char		*dest1;
+	char		*dest2;
+	char		*src;
 	size_t		n;
 
-	dest = "1111111";
+	dest1 = "1111111";
 	src = "abcd";
 	n = 3;
-	printf("%s\n", dest);
-	//ft_memmove(dest, src, n);
-	memmove(dest, src, n);
-	printf("%s\n", dest);
+	printf("%s\n", dest1);
+	ft_memmove(dest1, src, n);
+	printf("%s\n", dest1);
+	printf("%s\n", dest2);
+	memmove(dest2, src, n);
+	printf("%s\n", dest2);
 	return (0);
 }

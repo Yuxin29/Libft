@@ -47,12 +47,16 @@ char	*ft_strdup(const char *s);
 
 int	main(void)
 {
-	char	*dest;
+	char	*dest1;
+	char	*dest2;
 
-	dest = ft_strdup("hellosummer");
-	//dest = strdup(src);
-	if (dest)
-		printf("%s\n", dest);
-	free(dest);
+	dest1 = ft_strdup("hellosummer");
+	dest2 = strdup(src);
+	if (dest1)
+		printf("%s\n", dest1);
+	free(dest1);
+	if (dest2)
+		printf("%s\n", dest2);
+	free(dest2);
 	return (0);
 }

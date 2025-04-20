@@ -63,16 +63,20 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 int	main(void)
 {
-	char		dst[];
-	const char	src[];
+	char		*dst1;
+	char		*dst2;
+	const char	src;
 	size_t		num;
 
-	dst = "hellosummer";
+	dst1 = "hellosummer";
+	dst2 = "hellosummer";
 	src = "howisyourday";
 	num = 19;
-	printf("%s\n", dst);
-	//printf("%zu\n", ft_strlcat(dst, src, num));
-	printf("%zu\n", strlcat(dst, src, num));
-	printf("%s\n", dst);
+	printf("%s\n", dst1);
+	printf("%zu\n", ft_strlcat(dst1, src, num));
+	printf("%s\n", dst1);
+	printf("%s\n", dst2);
+	printf("%zu\n", ft_strlcat(dst2, src, num));
+	printf("%s\n", dst2);
 	return (0);
 }

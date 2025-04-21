@@ -38,10 +38,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n);
 
 int	main(void)
 {
-	
 	const unsigned char	test1[8] = "12345aaa";
 	const unsigned char	test2[8] = "12345ddd";
-	
+
 	printf("%i\n", ft_memcmp(test1, test2, 6));
 	printf("%i\n", memcmp(test1, test2, 6));
 	return (0);

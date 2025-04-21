@@ -18,23 +18,15 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	total;
 	void	*dest;
-	char	*zero;
 
 	total = nmemb * size;
+	if ((size) && (nmemb != total / size))
+		return (NULL);
 	if (total == 0)
-	{
-		zero = malloc(sizeof(*zero));
-		*zero = '\0';
-		return (zero);
-	}
-	dest = malloc(total);
+		return (NULL);
+	dest = (void *)malloc(total);
 	if (!(dest))
 		return (NULL);
-	ft_bzero(dest, total)
+	ft_bzero(dest, total);
 	return (dest);
 }
-
-/* 
-If the multiplication of nmemb and size would result in integer overflow, 
-then  calloc() returns  an  error.
-*/

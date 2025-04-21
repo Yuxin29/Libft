@@ -49,7 +49,7 @@ char	**ft_split(char const *s, char c)
 			des_output[x] = s[x];
 			x++;
 		}
-		return (des_output);	
+		return (des_output);
 		output++;
 	}
 }

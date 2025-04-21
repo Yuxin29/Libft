@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 /*
-NAME
-       malloc, free, calloc - allocate and free dynamic memory
+NAME	malloc, free, calloc - allocate and free dynamic memory
 
 SYNOPSIS
        void *malloc(size_t size);
@@ -48,10 +47,37 @@ which is suitably aligned for any built-in type.
 #include "libft.h"
 
 #include <stdlib.h>
+#include <stdio.h>
 
 void	*ft_calloc(size_t nmemb, size_t size);
 
 int	main(void)
 {
-	return (0);
+	size_t	i;
+	size_t	j;
+	int		*tes1;
+	int		*tes2;
+
+	i = 0;
+	j = 0;
+	tes1 = (int *)calloc(20, sizeof(int));
+	if (!tes1)
+		return (0);
+	while (i < 20)
+	{
+		printf("%d", tes1[i]);
+		i++;
+	}
+	free (tes1);
+	printf("\n");
+	tes2 = (int *)ft_calloc(18, sizeof(int));
+	if (!tes2)
+		return (0);
+	while (j < 18)
+	{
+		printf("%d", tes2[j]);
+		j++;
+	}
+	free (tes2);
+	return (100);
 }

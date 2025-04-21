@@ -25,24 +25,24 @@ RETURN VALUE
    
 */
 
+#include "libft.h"
+
 #include <string.h>
-#include <stddef.h>
 #include <stdio.h>
 
 void	*ft_memchr(const void *s, int c, size_t n);
 
 int	main(void)
 {
-	const char	test[100];
+	const char	test[100] = " f  f ddddf  summer";
 	size_t		n;
 	char		*test_1;
 	char		*test_2;
 
-	test = " f  f f  summer";
 	n = 10;
 	test_1 = ft_memchr(test, 's', n);
 	test_2 = memchr(test, 's', n);
-	printf("%s\n", test_1);
-	printf("%s\n", test_2);
+	printf("%s\n", (unsigned char *)test_1);
+	printf("%s\n", (unsigned char *)test_2);
 	return (0);
 }

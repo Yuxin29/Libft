@@ -23,7 +23,8 @@ RETURN VALUE
        None.
 */
 
-#include <stddef.h>
+#include "libft.h"
+
 #include <strings.h>
 #include <stdio.h>
 

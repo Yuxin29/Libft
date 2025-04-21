@@ -26,27 +26,23 @@ RETURN VALUE
        The memcpy() function returns a pointer to dest.
 */
 
+#include "libft.h"
+
 #include <string.h>
 #include <stdio.h>
-#include <stddef.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 int	main(void)
 {
-	char		dest[100];
-	const char	src[100];
-	size_t		n;
-	char		*test1;
-	char		*test2;
+	char	dest1[9] = "aaaaaaaa";
+	char	dest2[9] = "aaaaaaaa";
+	char	*src;
+	size_t	n;
 
-	dest = "aaaaa";
 	src = "summer";
 	n = 3;
-	printf("%s\n", dest);
-	test1 = ft_memcpy(dest, src, n);
-	test2 = memcpy(dest, src, n);
-	printf("%s\n", test1);
-	printf("%s\n", test2);
+	printf("%s\n", (unsigned char *)ft_memcpy(dest1, src, n));
+	printf("%s\n", (unsigned char *)memcpy(dest2, src, n));
 	return (0);
 }

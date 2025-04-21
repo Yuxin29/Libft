@@ -35,8 +35,9 @@ It’s a type which is used to represent the size of objects in bytes and
 it is therefore used as the return type by the sizeof operator. 
 */
 
+#include "libft.h"
+
 #include <string.h>
-#include <stddef.h>
 #include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
@@ -46,14 +47,15 @@ int	main(void)
 	char	tes1[100] = "abcde";
 	char	tes2[100] = "abcde";
 	char	tes3[100] = "abcde";
-	
-	ft_memmove(tes1 + 3, tes1, 4);
+	char	tes4[100] = "abcde";
+
+	memmove(tes1 + 3, tes1, 4);
 	printf("after memmove src1:%s\n", tes1);
-	
-	ft_memmove(tes2 + 1, tes2, 4);
-	printf("after memmove src1:%s\n", tes2);
-	
-	ft_memmove(tes3 + 5, tes3, 6);
-	printf("after memmove src1:%s\n", tes3);
+	memmove(tes2 + 1, tes2, 4);
+	printf("after memmove src2:%s\n", tes2);
+	memmove(tes3 + 5, tes3, 6);
+	printf("after memmove src4:%s\n", tes3);
+	memmove(tes4, tes4 + 4, 3);
+	printf("after memmove src4:%s\n", tes4);
 	return (0);
 }

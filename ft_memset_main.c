@@ -22,21 +22,20 @@ RETURN VALUE
        The memset() function returns a pointer to the memory area s.
 */
 
+#include "libft.h"
+
 #include <string.h>
 #include <stdio.h>
-#include <stddef.h>
 
 void	*ft_memset(void *s, int c, size_t n);
 
 int	main(void)
 {
-	char	s1[100];
-	char	s2[100];
+	char	s1[100] = " ccccccccccccccc  ";
+	char	s2[100] = " ccccccccccccccc  ";
 	int		c;
 	size_t	n;
 
-	s1 = " ccccccccccccccc  ";
-	s2 = " ccccccccccccccc  ";
 	c = 'a';
 	n = 8;
 	printf("%s\n", s1);

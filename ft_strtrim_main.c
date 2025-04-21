@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -17,11 +19,12 @@ char	*ft_strtrim(char const *s1, char const *set);
 
 int	main(void)
 {
-	char const	*l_str;
-	char const	*s_str;
-
-	l_str = "Summer how is your day is today a rainy day";
-	s_str = "is";
-	printf("%s\n", ft_strtrim(l_str, s_str));
+	char const	l_str[100] = "  s  aSummer how is your day is today a rainy day  s";
+	char const	s_str[4] = " ssa";
+	char		*result;
+	
+	result = ft_strtrim(l_str, s_str);
+	printf("%s\n", result);
+	free (result);
 	return (0);
 }

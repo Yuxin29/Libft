@@ -29,6 +29,12 @@ RETURN VALUE
        The memmove() function returns a pointer to dest.
 */
 
+/*
+size_t is an unsigned integer data type
+It’s a type which is used to represent the size of objects in bytes and
+it is therefore used as the return type by the sizeof operator. 
+*/
+
 #include <string.h>
 #include <stddef.h>
 #include <stdio.h>
@@ -36,20 +42,18 @@ RETURN VALUE
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
 int	main(void)
-{
-	char		*dest1;
-	char		*dest2;
-	char		*src;
-	size_t		n;
-
-	dest1 = "1111111";
-	src = "abcd";
-	n = 3;
-	printf("%s\n", dest1);
-	ft_memmove(dest1, src, n);
-	printf("%s\n", dest1);
-	printf("%s\n", dest2);
-	memmove(dest2, src, n);
-	printf("%s\n", dest2);
+{	
+	char	tes1[100] = "abcde";
+	char	tes2[100] = "abcde";
+	char	tes3[100] = "abcde";
+	
+	ft_memmove(tes1 + 3, tes1, 4);
+	printf("after memmove src1:%s\n", tes1);
+	
+	ft_memmove(tes2 + 1, tes2, 4);
+	printf("after memmove src1:%s\n", tes2);
+	
+	ft_memmove(tes3 + 5, tes3, 6);
+	printf("after memmove src1:%s\n", tes3);
 	return (0);
 }

@@ -11,45 +11,79 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 #include <stdlib.h>
 
-size_t		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 
-char		*ft_substr(char const *s, unsigned int start, size_t len);
-
-size_t	ft_count_c(char const *s, char c)
+size_t	ft_count_total_strs(char const *s, char c)
 {
-	size_t	c_count;
+	size_t	strs_count;
 
-	c_count = 0;
+	if ((*s) == c)
+		s++;
+	strs_count = 1;
 	while (*s)
 	{
 		if ((*s) == c)
-			c_count++;
+			strs_count++;
 		s++;
 	}
-	return (c_count);
+	return (strs_count);
+}
+
+char	*ft_showlength_eachstr(char const *s, char c)
+{
+	size_t	num_strs;
+	char	*str_leng;	//show length of each str in char
+	int	i;
+
+	i = 0;
+	num_strs = ft_count_total_strs(s, c);
+	str_leng = malloc(sizeof(char) * (num_strs + 1));
+	if (!(str_leng))
+		return (NULL);
+	str_leng[i] = '0';
+	while (*s)
+	{
+		if (*s != c)
+			str_leng[i]++;
+		if (*s == c)
+		{
+			i++;
+			str_leng[i] = '0';
+		}
+		s++;
+	}
+	//len_strs[i] = '\0';  //why this can not be here
+	return (str_leng);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	len;
-	size_t	num_of_output;
-	size_t	output;
-	size_t	x;
+	char	*lengthof_eachstr; //how length of each strs in char, needed for malloc
+	size_t	n;		//count strs
+	size_t	m;		//count each chars
+	size_t	t;		//count total chars
+	char	**strs_of_strs;  //this is the returning values
 
-	len = ft_strlen(s);
-	num_of_output = ft_count_c(s, c) + 1;
-	output = 0;
-	while (output < num_of_output)
+	lengthof_eachstr = ft_showlength_eachstr(s, c);
+	n = 0;
+	t = 0;
+	//num_of_strs = ft_count_total_strs(s, c);
+	while (t < ft_strlen(s))
 	{
-		x = 0;
-		while (s[x] != c)
+		strs_of_strs[n] = malloc(sizeof(char) * (lengthof_eachstr[n] - '0'));
+		m = 0;  //for each str, the char counts start from zero
+		while (s[t] != c)
 		{
-			des_output[x] = s[x];
-			x++;
+			strs_of_strs[n][m] = s[t];
+			m++;
+			t++;  //t for general char counts incredent every time
 		}
-		return (des_output);
-		output++;
+		strs_of_strs[n][m] = '\0';
+		n++;
+		t++;
 	}
+	return (strs_of_strs);
 }

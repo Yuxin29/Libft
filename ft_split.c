@@ -6,7 +6,7 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 13:24:34 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/20 13:47:22 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/25 17:19:27 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ size_t	ft_count_total_strs(char const *s, char c)
 
 char	*ft_showlength_eachstr(char const *s, char c)
 {
+	int		i;
 	size_t	num_strs;
-	char	*str_leng;	//show length of each str in char
-	int	i;
+	char	*str_leng;
 
 	i = 0;
 	num_strs = ft_count_total_strs(s, c);
@@ -55,35 +55,40 @@ char	*ft_showlength_eachstr(char const *s, char c)
 		}
 		s++;
 	}
-	//len_strs[i] = '\0';  //why this can not be here
+	str_leng[i + 1] = '\0';
 	return (str_leng);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	*lengthof_eachstr; //how length of each strs in char, needed for malloc
-	size_t	n;		//count strs
-	size_t	m;		//count each chars
-	size_t	t;		//count total chars
-	char	**strs_of_strs;  //this is the returning values
-
+	char	*lengthof_eachstr;//how long is each str, needed for malloc
+	size_t	n;//count strs
+	size_t	m;//count each chars
+	char	**strs_of_strs;//this is the RETURN VALUE
+	
 	lengthof_eachstr = ft_showlength_eachstr(s, c);
+	strs_of_strs = malloc(sizeof(char *) * (ft_count_total_strs(s, c) + 1));
+	//we only need to allocate mem for the start of each substr here.
+	if (!(strs_of_strs))
+		return (NULL);
 	n = 0;
-	t = 0;
-	//num_of_strs = ft_count_total_strs(s, c);
-	while (t < ft_strlen(s))
+	while (*s)
+		s++;
+	while (*s)
 	{
-		strs_of_strs[n] = malloc(sizeof(char) * (lengthof_eachstr[n] - '0'));
-		m = 0;  //for each str, the char counts start from zero
-		while (s[t] != c)
+		strs_of_strs[n] = malloc(sizeof(char) * (lengthof_eachstr[n] - '0' + 1));
+		if (!(strs_of_strs[n]))
+			return (NULL);
+		m = 0;//for each str, the char counts start from zero
+		while (*s != c)
 		{
-			strs_of_strs[n][m] = s[t];
+			strs_of_strs[n][m] = *s;
 			m++;
-			t++;  //t for general char counts incredent every time
+			s++;//t for general char counts incredent every time
 		}
 		strs_of_strs[n][m] = '\0';
 		n++;
-		t++;
 	}
+	strs_of_strs[n] = (char *)'\0';
 	return (strs_of_strs);
 }

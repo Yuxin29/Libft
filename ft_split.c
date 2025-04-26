@@ -20,7 +20,7 @@ size_t	ft_count_total_strs(char const *s, char c)
 {
 	size_t	strs_count;
 
-	if ((*s) == c)
+	while ((*s) == c)
 		s++;
 	strs_count = 1;
 	while (*s)
@@ -28,6 +28,12 @@ size_t	ft_count_total_strs(char const *s, char c)
 		if ((*s) == c)
 			strs_count++;
 		s++;
+	}
+	s--;
+	while (*s == c)
+	{
+		strs_count--;
+		s--;
 	}
 	return (strs_count);
 }
@@ -49,6 +55,8 @@ size_t	*ft_showlength_eachstr(char const *s, char c)
 		i++;
 	}
 	i = 0;
+	while ((*s) == c)
+		s++;
 	while (*s)
 	{
 		if (*s != c)
@@ -111,13 +119,12 @@ char	**ft_split(char const *s, char c)
 		}
 		else if (n < num_of_subs - 1)
 		{
-			strs_of_strs[n][m] = '\0';
+			strs_of_strs[n][m] = NULL;
 			n++;
 			m = 0;
 		}
 		s++;
 	}
-	n++;
-	strs_of_strs[n] = NULL;
+	strs_of_strs[n + 1] = NULL;
 	return (strs_of_strs);
 }

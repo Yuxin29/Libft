@@ -6,7 +6,7 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:05:24 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/22 20:07:30 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/26 17:06:13 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	main(void)
 	char		**strs_of_strs;
 	size_t		n;
 
-	count_strs = ft_count_total_strs("aa&bbb&ddddd", '&');
-	lengthof_eachstr = ft_showlength_eachstr("aa&bbb&ddddd", '&');
-	strs_of_strs = ft_split("aa&bbb&ddddd", '&');
+	count_strs = ft_count_total_strs("&&&aa&bbb&ddddd&&", '&');
+	lengthof_eachstr = ft_showlength_eachstr("&&&aa&bbb&ddddd&&", '&');
+	strs_of_strs = ft_split("&&&aa&bbb&ddddd&&", '&');
 	printf("print_number_of_substrs\n");
 	printf("%zu\n", count_strs);
 	printf("print_length_of_substrs\n");
@@ -41,9 +41,9 @@ int	main(void)
 	printf("print_substrs\n");
 	n = 0;
 	while (strs_of_strs[n])
-    	{
-        	printf("%s\n", strs_of_strs[n]);
-        	n++;
-    	}
+	{
+		printf("%s\n", strs_of_strs[n]);
+		n++;
+	}
 	return (0);
 }

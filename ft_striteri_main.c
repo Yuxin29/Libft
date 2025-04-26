@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim_main.c                                  :+:      :+:    :+:   */
+/*   ft_striteri_main.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 11:54:41 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/20 11:57:45 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/26 19:49:30 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/26 19:52:27 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_strtrim(char const *s1, char const *set);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+void	ft_capitalize(unsigned int i, char *c)
+{
+	(void) i;
+	if ((*c >= 'a') && (*c <= 'z'))
+		*c -= 32;
+}
 
 int	main(void)
 {
-	char const	l_str[100] = "s  s  aSummer how is your day  s  s";
-	char const	s_str[2] = " s";
-	char		*result;
+	char	test[5] = "abcde";
 
-	result = ft_strtrim(l_str, s_str);
-	printf("%s\n", result);
-	free (result);
+	ft_striteri(test, &ft_capitalize);
+	printf("%s\n", test);
 	return (0);
 }

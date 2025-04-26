@@ -6,7 +6,7 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 19:14:59 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/19 18:06:21 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/26 18:28:11 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*sub;
+	char	*sub;
 	size_t	n;
 	size_t	max;
 

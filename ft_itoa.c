@@ -13,6 +13,20 @@
 #include <stdlib.h>
 #include "libft.h"
 
+char	*ft_strcpy(char *dest, char *src)
+{	
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
 int	ft_iterative_power(int nb, int power)
 {
 	int	multi;
@@ -43,18 +57,6 @@ int	ft_count_int(int n)
 	return (num);
 }
 
-char	*ft_is_special(int n)
-{
-	char	*special;
-
-	if (n != -2147483648)
-		return (NULL);
-	special = malloc(sizeof(char) * 12);
-	special = "-2147483648";
-	special[12] = '\0';
-	return (special);
-}
-
 char	*ft_itoa_positive(int n)
 {
 	int		i;
@@ -64,11 +66,14 @@ char	*ft_itoa_positive(int n)
 
 	i = 0;
 	size = ft_count_int(n);
-	result = malloc(sizeof(char) * (n + 1));
+	result = malloc(sizeof(char) * (size + 1));
+	if (!(result))
+		return (NULL);
 	while (i < size)
 	{
-		power = ft_iterative_power(10, (size - 1));
-		result[i] = n / power;
+		power = ft_iterative_power(10, (size - i - 1));
+		result[i] = n / power + '0';
+		n = n % power;
 		i++;
 	}
 	result[i] = '\0';
@@ -78,10 +83,17 @@ char	*ft_itoa_positive(int n)
 char	*ft_itoa(int n)
 {
 	char	*minus;
+	char	*special;
 
 	minus = "-";
 	if (n == -2147483648)
-		return (ft_is_special(n));
+	{
+		special = malloc(sizeof(char) * 12);
+		if (!(special))
+			return (NULL);
+		ft_strcpy(special, "-2147483648");
+		return (special);
+	}	
 	if (n < 0)
 		return (ft_strjoin(minus, ft_itoa_positive(-n)));
 	return (ft_itoa_positive(n));

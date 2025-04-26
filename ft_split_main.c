@@ -25,7 +25,7 @@ int	main(void)
 	size_t		*lengthof_eachstr;
 	char		**strs_of_strs;
 	size_t		n;
-	
+
 	count_strs = ft_count_total_strs("aa&bbb&ddddd", '&');
 	lengthof_eachstr = ft_showlength_eachstr("aa&bbb&ddddd", '&');
 	strs_of_strs = ft_split("aa&bbb&ddddd", '&');

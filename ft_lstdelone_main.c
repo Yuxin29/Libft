@@ -15,20 +15,46 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+char	*ft_strcpy(char *dest, char *src)
+{	
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+void del(void *content);
+
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
 int	main(void)
 {
-	int	i;
+	char	*s;
 	t_list	*test;
 
-	i = 0;
+	s = "freed_successful";
 	test = malloc(sizeof(t_list) * 1);
-	test->content = "to_be_freed";
-	ft_lstdelone(test, void (*del)(void *))
+	if (!(test))
+		return (0);
+	test->content = malloc(sizeof(char) * 12);
 	if (!(test->content))
+		return (0);
+	test->next = malloc(sizeof(t_list) * 1);
+	if (!(test->next))
+		return (0);
+	ft_strcpy(test->content, "to_be_freed");
+	test->next = NULL;
+	ft_lstdelone(test, del);
+	test = NULL;//prevent seg fault and future access to empty mem.
+	if (!(test))
 	{
-		printf("%i\n", i);
+		printf("%s\n", s);
 		return (0);
 	}
 	return (0);

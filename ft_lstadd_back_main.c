@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_main.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back_main.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 13:46:40 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/27 13:56:52 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/27 15:04:17 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/27 15:07:40 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_lstsize(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 int	main(void)
 {
-	t_list	*lst_0;
-	t_list	*lst_1;
-	int		n;
+	t_list	*src;
+	t_list	**dst;
 
-	lst_0 = malloc(sizeof(t_list) * 1);
-	lst_1 = malloc(sizeof(t_list) * 1);
-	lst_0->content = "num_0";
-	lst_0->next = lst_1;
-	lst_1->content = "num_1";
-	lst_1->next = NULL;
-	n = ft_lstsize(lst_0);
-	printf("%i\n", n);
+	src = malloc(sizeof(t_list) * 1);
+	dst = malloc(sizeof(t_list) * 1);
+	src->content = "test";
+	src->next = NULL;
+	ft_lstadd_front(dst, src);
+	printf("%s\n", (char *)*dst->content);
 	return (0);
 }

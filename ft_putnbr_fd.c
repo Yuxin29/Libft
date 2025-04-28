@@ -6,7 +6,7 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:40:19 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/27 11:39:51 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/04/28 19:30:52 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ int	ft_count_int(int n)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	tens;
-	int	first;
-	int	nt;
-	int	i;
+	int		tens;
+	int		first;
+	int		nt;
+	int		i;
 	char	c;
 
 	tens = ft_count_int(n);
@@ -57,11 +57,11 @@ void	ft_putnbr_fd(int n, int fd)
 	while (nt / 10 >= 1)
 	{
 		first = nt / ft_iterative_power(10, tens - i - 1);
-		c  = first + '0';
+		c = first + '0';
 		write(fd, &c, 1);
 		nt = nt % ft_iterative_power(10, tens - i - 1);
 		i++;
 	}
-	c  = nt + '0';
+	c = nt + '0';
 	write(fd, &c, 1);
 }

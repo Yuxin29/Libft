@@ -29,7 +29,7 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-void del(void *content);
+void	del(void *content);
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
@@ -51,7 +51,7 @@ int	main(void)
 	ft_strcpy(test->content, "to_be_freed");
 	test->next = NULL;
 	ft_lstdelone(test, del);
-	test = NULL;//prevent seg fault and future access to empty mem.
+	test = NULL;
 	if (!(test))
 	{
 		printf("%s\n", s);

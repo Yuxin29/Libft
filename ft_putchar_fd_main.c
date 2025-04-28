@@ -10,17 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+0: std input; 1: std output; 2: std error
+*/
+
 #include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd);
 
 int	main(void)
 {
-	ft_putchar_fd('a', 0);//std input
+	ft_putchar_fd('a', 0);
 	write(1, "\n", 1);
-	ft_putchar_fd('a', 1);//std output
+	ft_putchar_fd('a', 1);
 	write(1, "\n", 1);
-	ft_putchar_fd('a', 2);//std error
+	ft_putchar_fd('a', 2);
 	write(1, "\n", 1);
 	return (0);
 }

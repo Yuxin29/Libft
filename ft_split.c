@@ -11,10 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
 #include <stdlib.h>
-
-size_t	ft_strlen(const char *str);
 
 size_t	ft_count_total_strs(char const *s, char c)
 {
@@ -74,11 +71,11 @@ char	**ft_mem_allocate(char const *s, char c)
 	size_t	n;
 	char	**strs_of_strs_mem;
 
+	n = 0;
 	lengthof_eachstr = ft_showlength_eachstr(s, c);
 	strs_of_strs_mem = malloc(sizeof(char *) * (ft_count_total_strs(s, c) + 1));
 	if (!(strs_of_strs_mem))
 		return (NULL);
-	n = 0;
 	while (n < ft_count_total_strs(s, c))
 	{
 		strs_of_strs_mem[n] = malloc(sizeof(char) * (lengthof_eachstr[n] + 1));
@@ -119,7 +116,7 @@ char	**ft_split(char const *s, char c)
 		}
 		else if (n < num_of_subs - 1)
 		{
-			strs_of_strs[n][m] = NULL;
+			strs_of_strs[n][m] = '\0';
 			n++;
 			m = 0;
 		}

@@ -43,7 +43,7 @@ int	main(void)
 {
 	const char	*test;
 
-	test = "   +188888888888882346ashd ";
+	test = "   +188000000000008888888888888888882346ashd ";
 	printf("%d\n", atoi(test));
 	printf("%d\n", ft_atoi(test));
 	return (0);

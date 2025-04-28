@@ -25,7 +25,7 @@ int	main(void)
 	t_list	*node_1;
 	t_list	*node_2;
 	t_list	*nodes;
-	
+
 	node_1 = malloc(sizeof(t_list));
 	node_2 = malloc(sizeof(t_list));
 	if ((!node_1) || (!node_2))

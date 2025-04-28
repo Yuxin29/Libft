@@ -42,10 +42,8 @@ RETURN VALUE
        the tested class, and zero if not.
 */
 
-#include <ctype.h>
-#include <stdio.h>
-
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
@@ -66,23 +64,16 @@ int	main(void)
 	c4 = ' ';
 	printf("test_isalpha\n");
 	printf("%i\n", ft_isalpha(c1));
-	printf("%i\n", isalpha(c1));
 	printf("%i\n", ft_isalpha(c2));
-	printf("%i\n", isalpha(c2));
 	printf("\n");
 	printf("test_isdigit\n");
 	printf("%i\n", ft_isdigit(c1));
-	printf("%i\n", isdigit(c1));
 	printf("%i\n", ft_isdigit(c2));
-	printf("%i\n", isdigit(c2));
 	printf("\n");
 	printf("test_isalnum\n");
 	printf("%i\n", ft_isalnum(c1));
-	printf("%i\n", isalnum(c2));
 	printf("%i\n", ft_isalnum(c1));
-	printf("%i\n", isalnum(c2));
 	printf("%i\n", ft_isalnum(c3));
-	printf("%i\n", isalnum(c3));
 	printf("\n");
 	printf("test_isprint\n");
 	printf("%i\n", ft_isprint(c3));

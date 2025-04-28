@@ -41,7 +41,7 @@ int	main(void)
 	lst_last->next = NULL;
 	lst = lst_0;
 	ft_lstclear(&lst, del);
-	//lst = NULL;
+	lst = NULL;
 	if (!(lst))
 		printf("%s\n", s);
 	return (0);

@@ -41,9 +41,9 @@ int	ft_atoi(const char *nptr);
 
 int	main(void)
 {
-	const char	test[];
+	const char	*test;
 
-	test = "182346ashd ";
+	test = "   +188888888888882346ashd ";
 	printf("%d\n", atoi(test));
 	printf("%d\n", ft_atoi(test));
 	return (0);

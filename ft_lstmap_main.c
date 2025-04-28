@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 15:36:57 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/17 17:24:14 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/28 17:58:56 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/28 18:01:34 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
+#include "libft.h"
+
+#include <stdlib.h>
+#include <stdio.h>
+
+void	*f_changeto_emptied(void *cont)
 {
-	int	output;
-	int	sign;
-	
-	output = 0;
-	sign = 1;
-	while (*nptr == ' ')
-		nptr++;
-	if (*nptr == '-')
-	{
-		sign = -1;
-		nptr++;
-	}
-	if (*nptr == '+')
-		nptr++;
-	if ((*nptr < '0') && (*nptr > '9'))
-		return (0);
-	while (('0' <= *nptr) && (*nptr <= '9'))
-	{
-		output = output * 10 + (*nptr - '0');
-		nptr++;
-	}
-	return (output * sign);
+	char	*str;
+
+	str = malloc(sizeof(char) * 8);
+	str = "emptied";
+	reurn (str);
+}
+
+void	del(void *cont)
+{	
+	free(cont);
+}
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+int	main(void)
+{
+	return (0);
 }

@@ -10,35 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Parameters 
+	lst: The address of a pointer to a node.
+	f: The address of the function applied to each node’s content.
+	el: The address of the function used to delete a node’s content if needed.
+Return value	The new list.
+		NULL if the allocation fails.
+Description 	Iterates through the list ’lst’, 
+		applies the function ’f’ to each node’s content, 
+		and creates a new list resulting of the successive applications 
+		of the function ’f’. 
+		The ’del’ is used to delete the content of node if needed.
+*/
+
 #include "libft.h"
 
 #include <stdlib.h>
 
-void	*f(void *)
-{
-	xxx
-}
-
-void	*del(void *)
-{
-	vvv
-}
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
-	t_list	*temp;
+	t_list	*new_node;
 
-	temp = lst;
-	new_lst = malloc(sizeof(t_list));
-	if (!(new_lst) || (!lst) || (!f) || (!del))
+	if ((!lst) || (!f) || (!del))
 		return (NULL);
-	while (temp)
+	new_lst = NULL;
+	while (lst)
 	{
-		new_lst->content = f((char *)temp->content);
-		new_lst->next = temp->next;
-		temp = temp->next;
-		i++;
+		new_node = ft_lstnew(f(lst->content));
+		//ft_lstnew
+		if (!new_node)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, new_node);
+		lst = lst -> next;
 	}
 	return (new_lst);
 }

@@ -32,10 +32,9 @@ void	ft_bzero(void *s, size_t n);
 
 int	main(void)
 {
-	char	test[100];
+	char	test[100] = "aaaabbbb";
 	size_t	n;
 
-	test = "aaaabbbb";
 	n = 2;
 	printf("%s\n", test);
 	ft_bzero(test, n);

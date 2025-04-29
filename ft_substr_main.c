@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+
+#include <stdlib.h>
 #include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -23,7 +24,7 @@ int	main(void)
 	size_t			n;
 	char			*result;
 
-	test = "summer how is you day";
+	test = "summer how is youday";
 	s = 7;
 	n = 10;
 	result = ft_substr(test, s, n);

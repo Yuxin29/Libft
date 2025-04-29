@@ -19,8 +19,8 @@ char	*ft_strtrim(char const *s1, char const *set);
 
 int	main(void)
 {
-	char const	l_str[100] = "s  s  aSummer how is your day  s  s";
-	char const	s_str[2] = " s";
+	char const	l_str[100] = "sas  aSummer how is your day  sas";
+	char const	s_str[2] = "as";
 	char		*result;
 
 	result = ft_strtrim(l_str, s_str);

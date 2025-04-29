@@ -13,15 +13,16 @@
 #include <stdlib.h>
 #include "libft.h"
 
-size_t		ft_strlen(const char *str);
-
 int	ft_notbelongto_set(char c, char const *set)
 {
-	while (*set)
+	int	i;
+
+	i = 0;
+	while (set[i])
 	{
-		if (c == *set)
+		if (c == set[i])
 			return (1);
-		set++;
+		i++;
 	}
 	return (0);
 }
@@ -33,11 +34,11 @@ size_t	ft_trim_start(char const *s1, char const *set)
 	start_index = 0;
 	while (s1[start_index])
 	{
-		if (ft_notbelongto_set(s1[start_index], set))
+		if ((ft_notbelongto_set(s1[start_index], set)) == 0)
 			return (start_index);
 		start_index++;
 	}
-	return (0);
+	return (1);
 }
 
 size_t	ft_trim_end(char const *s1, char const *set)
@@ -47,11 +48,11 @@ size_t	ft_trim_end(char const *s1, char const *set)
 	end_index = ft_strlen(s1);
 	while (end_index > 0)
 	{
-		if (ft_notbelongto_set(s1[end_index], set))
+		if ((ft_notbelongto_set(s1[end_index], set)) == 1)
 			return (end_index);
 		end_index--;
 	}
-	return (0);
+	return (1);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

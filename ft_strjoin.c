@@ -13,8 +13,6 @@
 #include "libft.h"
 #include <stdlib.h>
 
-size_t		ft_strlen(const char *str);
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	l1;
@@ -39,6 +37,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		result[l1 + n] = s2[n];
 		n++;
 	}
-	result[l1 + l2 + 1] = '\0';
+	result[l1 + l2] = '\0';
 	return (result);
 }

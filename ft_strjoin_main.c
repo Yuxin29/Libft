@@ -20,9 +20,14 @@ int	main(void)
 {
 	char const	*part1;
 	char const	*part2;
+	char		*result;
 
 	part1 = "helloboy";
 	part2 = "Itsarainyday";
-	printf("%s\n", ft_strjoin(part1, part2));
+	result = ft_strjoin(part1, part2);
+	if (!result)
+		return (0);
+	printf("%s\n", result);
+	free (result);
 	return (0);
 }

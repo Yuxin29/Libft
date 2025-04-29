@@ -14,8 +14,6 @@
 NAME	malloc, free, calloc - allocate and free dynamic memory
 
 SYNOPSIS
-       void *malloc(size_t size);
-       void free(void *ptr);
        void *calloc(size_t nmemb, size_t size);
 
 DESCRIPTION
@@ -40,8 +38,6 @@ which is suitably aligned for any built-in type.
        NULL may also be returned
        by  a  successful  call to malloc() with a size of zero, 
        or by a successful call to calloc() with nmemb or size equal to zero.
-
-       The free() function returns no value.
 */
 
 #include "libft.h"
@@ -54,14 +50,13 @@ void	*ft_calloc(size_t nmemb, size_t size);
 int	main(void)
 {
 	size_t	i;
-	size_t	j;
 	int		*tes1;
 	int		*tes2;
 
 	i = 0;
-	j = 0;
-	tes1 = (int *)calloc(20, sizeof(int));
-	if (!tes1)
+	tes1 = calloc(20, sizeof(int));
+	tes2 = ft_calloc(18, sizeof(int));
+	if ((!tes1) || (!tes2))
 		return (0);
 	while (i < 20)
 	{
@@ -70,14 +65,12 @@ int	main(void)
 	}
 	free (tes1);
 	printf("\n");
-	tes2 = (int *)ft_calloc(18, sizeof(int));
-	if (!tes2)
-		return (0);
-	while (j < 18)
+	i = 0;
+	while (i < 18)
 	{
-		printf("%d", tes2[j]);
-		j++;
+		printf("%d", tes2[i]);
+		i++;
 	}
 	free (tes2);
-	return (100);
+	return (0);
 }

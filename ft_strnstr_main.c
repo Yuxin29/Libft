@@ -14,9 +14,6 @@
 NAME
      strnstr — locate a substring in a string
 
-LIBRARY
-     Utility functions from BSD systems (libbsd, -lbsd)
-
 SYNOPSIS
      char	*strnstr(const char *big, const char *little, size_t len);
 
@@ -39,10 +36,9 @@ RETURN VALUES
 
 #include <stdio.h>
 #include <string.h>
-#include <bsd/string.h>
-// -lbsd when cc
+#include <bsd/string.h>		// -lbsd when cc
 
-const char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 int	main(void)
 {
@@ -51,8 +47,8 @@ int	main(void)
 	size_t		len;
 
 	big = "hellosummerboybabyboybyebye";
-	little = "boyba++";
-	len = 24;
+	little = "boyba";
+	len = 15;
 	printf("%s\n", ft_strnstr(big, little, len));
 	printf("%s\n", strnstr(big, little, len));
 	return (0);

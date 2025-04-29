@@ -22,7 +22,8 @@ RETURN VALUE
 The strlen() function returns the number of bytes in the string pointed to by s.
 */
 
-#include <stddef.h>
+#include "libft.h"
+
 #include <string.h>
 #include <stdio.h>
 
@@ -30,8 +31,9 @@ size_t	ft_strlen(const char *str);
 
 int	main(void)
 {
-	const char	str[] = "Hellosummer";
+	const char	*str;
 
+	str = "";
 	printf("%lu\n", ft_strlen(str));
 	printf("%lu\n", strlen(str));
 	return (0);

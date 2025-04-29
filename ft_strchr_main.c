@@ -12,7 +12,7 @@
 
 /*
 NAME
-       strchr, strrchr, strchrnul - locate character in string
+       strchr, strrchr - locate character in string
 
 SYNOPSIS
        char *strchr(const char *s, int c);
@@ -20,8 +20,7 @@ SYNOPSIS
 DESCRIPTION
        The strchr() function returns a pointer to the first occurrence of 
        the character c in the string s.
-       Here "character" means "byte"; 
-       these functions do not work with wide or multibyte characters.
+
 
 RETURN VALUE
        The strchr() and strrchr() functions return a pointer to the matched 
@@ -42,7 +41,7 @@ int	main(void)
 	int			c;
 
 	test = "hellosummerhowryou";
-	c = 'x';
+	c = '\0';
 	printf("%s\n", ft_strchr(test, c));
 	printf("%s\n", strchr(test, c));
 	return (0);

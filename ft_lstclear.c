@@ -14,11 +14,6 @@
 
 #include <stdlib.h>
 
-void	del(void *cont)
-{
-	free (cont);
-}
-
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;

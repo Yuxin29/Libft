@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int	ft_iterative_power(int nb, int power)
+int	ft_power(int nb, int power)
 {
 	int	multi;
 
@@ -30,19 +30,6 @@ int	ft_iterative_power(int nb, int power)
 	return (multi);
 }
 
-int	ft_count_int(int n)
-{
-	int	num;
-
-	num = 1;
-	while (n / 10 > 1)
-	{
-		n /= 10;
-		num++;
-	}
-	return (num);
-}
-
 void	ft_putnbr_fd(int n, int fd)
 {
 	int		tens;
@@ -51,15 +38,20 @@ void	ft_putnbr_fd(int n, int fd)
 	int		i;
 	char	c;
 
-	tens = ft_count_int(n);
+	tens = 1;
 	nt = n;
+	while (n / 10 > 1)
+	{
+		n /= 10;
+		tens++;
+	}
 	i = 0;
 	while (nt / 10 >= 1)
 	{
-		first = nt / ft_iterative_power(10, tens - i - 1);
+		first = nt / ft_power(10, tens - i - 1);
 		c = first + '0';
 		write(fd, &c, 1);
-		nt = nt % ft_iterative_power(10, tens - i - 1);
+		nt = nt % ft_power(10, tens - i - 1);
 		i++;
 	}
 	c = nt + '0';

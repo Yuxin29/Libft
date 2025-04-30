@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <stdlib.h>
 
 //Part 1 - Libc functions
 int			ft_isalpha(int c);

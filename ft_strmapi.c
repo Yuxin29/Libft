@@ -13,22 +13,18 @@
 #include "libft.h"
 #include <stdlib.h>
 
-size_t	ft_strlen(const char *str);
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*new_s;
-	size_t	len;
 	size_t	i;
 
 	if ((!s) || (!f))
 		return (NULL);
-	len = ft_strlen(s);
 	i = 0;
-	new_s = malloc(sizeof(char) * (len + 1));
+	new_s = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!(new_s))
 		return (NULL);
-	while (i < len)
+	while (s[i])
 	{
 		new_s[i] = f(i, s[i]);
 		i++;

@@ -15,7 +15,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int		ft_iterative_power(int nb, int power);
 char	*ft_itoa(int n);
 
 int	main(void)

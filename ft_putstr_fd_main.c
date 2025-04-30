@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd);
 
 int	main(void)
 {
+	ft_putstr_fd("abcd", 0);
 	ft_putstr_fd("abcd", 1);
+	ft_putstr_fd("abcd", 2);
 	return (0);
 }

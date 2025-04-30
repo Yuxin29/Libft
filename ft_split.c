@@ -16,22 +16,19 @@
 size_t	ft_count_total_strs(char const *s, char c)
 {
 	size_t	strs_count;
+	char	*trimed;
+	char	*temp;
 
-	while ((*s) == c)
-		s++;
+	trimed = ft_strtrim(s, &c);
+	temp = trimed;
 	strs_count = 1;
-	while (*s)
+	while (*temp)
 	{
-		if ((*s) == c)
+		if ((*temp) == c)
 			strs_count++;
-		s++;
+		temp++;
 	}
-	s--;
-	while (*s == c)
-	{
-		strs_count--;
-		s--;
-	}
+	free (trimed);
 	return (strs_count);
 }
 
@@ -69,14 +66,16 @@ char	**ft_mem_allocate(char const *s, char c)
 {
 	size_t	*lengthof_eachstr;
 	size_t	n;
+	size_t	total;
 	char	**strs_of_strs_mem;
 
 	n = 0;
+	total = ft_count_total_strs(s, c);
 	lengthof_eachstr = ft_showlength_eachstr(s, c);
-	strs_of_strs_mem = malloc(sizeof(char *) * (ft_count_total_strs(s, c) + 1));
+	strs_of_strs_mem = malloc(sizeof(char *) * (total + 1));
 	if (!(strs_of_strs_mem))
 		return (NULL);
-	while (n < ft_count_total_strs(s, c))
+	while (n < total)
 	{
 		strs_of_strs_mem[n] = malloc(sizeof(char) * (lengthof_eachstr[n] + 1));
 		if (!(strs_of_strs_mem[n]))
@@ -90,6 +89,7 @@ char	**ft_mem_allocate(char const *s, char c)
 		}
 		n++;
 	}
+	free (lengthof_eachstr);
 	strs_of_strs_mem[n] = NULL;
 	return (strs_of_strs_mem);
 }
@@ -122,6 +122,7 @@ char	**ft_split(char const *s, char c)
 		}
 		s++;
 	}
+	strs_of_strs[n][m] = '\0';
 	strs_of_strs[n + 1] = NULL;
 	return (strs_of_strs);
 }

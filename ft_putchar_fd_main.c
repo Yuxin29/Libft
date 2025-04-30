@@ -12,6 +12,8 @@
 
 /*
 0: std input; 1: std output; 2: std error
+To see the diffences:
+./a.out > out.txt
 */
 
 #include <unistd.h>

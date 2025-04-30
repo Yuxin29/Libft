@@ -29,7 +29,10 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-void	del(void *content);
+void	del(void *cont)
+{
+	free (cont);
+}
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 

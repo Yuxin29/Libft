@@ -13,16 +13,13 @@
 #include <stdlib.h>
 #include "libft.h"
 
-int	ft_notbelongto_set(char c, char const *set)
+int	ft_belongto_set(char c, char const *set)
 {
-	int	i;
-
-	i = 0;
-	while (set[i])
+	while (*set)
 	{
-		if (c == set[i])
+		if (c == *set)
 			return (1);
-		i++;
+		set++;
 	}
 	return (0);
 }
@@ -31,14 +28,12 @@ size_t	ft_trim_start(char const *s1, char const *set)
 {
 	size_t	start_index;
 
+	if (!s1 || !set)
+		return (0);
 	start_index = 0;
-	while (s1[start_index])
-	{
-		if ((ft_notbelongto_set(s1[start_index], set)) == 0)
-			return (start_index);
+	while (s1[start_index] && ft_belongto_set(s1[start_index], set) != 0)
 		start_index++;
-	}
-	return (1);
+	return (start_index);
 }
 
 size_t	ft_trim_end(char const *s1, char const *set)
@@ -46,13 +41,9 @@ size_t	ft_trim_end(char const *s1, char const *set)
 	size_t	end_index;
 
 	end_index = ft_strlen(s1);
-	while (end_index > 0)
-	{
-		if ((ft_notbelongto_set(s1[end_index], set)) == 1)
-			return (end_index);
+	while (end_index && ft_belongto_set(s1[end_index - 1], set))
 		end_index--;
-	}
-	return (1);
+	return (end_index);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -66,7 +57,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	n = 0;
 	s_index = ft_trim_start(s1, set);
 	e_index = ft_trim_end(s1, set);
-	len = e_index - s_index;
+	if (s_index >= e_index)
+		len = 0;
+	else
+		len = e_index - s_index;
 	trimed = malloc(sizeof(char) * (len + 1));
 	if (!(trimed))
 		return (NULL);

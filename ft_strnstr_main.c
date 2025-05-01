@@ -30,13 +30,14 @@ RETURN VALUES
      if little occurs nowhere in big, NULL is returned; 
      otherwise a pointer to the first character of the first occurrence 
      of little is returned.
+     // -lbsd when cc
 */
 
 #include "libft.h"
 
 #include <stdio.h>
 #include <string.h>
-#include <bsd/string.h>		// -lbsd when cc
+#include <bsd/string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 

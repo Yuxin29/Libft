@@ -42,13 +42,15 @@ RETURN VALUES
      For strlcat() that means the initial length of dst plus the length of src.  
      While this may seem somewhat confusing, 
      it was done to make truncation detection simple
+//(See libbsd(7) for include usage.)  -lbsd
+
 */
 
-#include <stddef.h>
+#include "libft.h"
+
 #include <string.h>
 #include <stdio.h>
 #include <bsd/string.h>
-//(See libbsd(7) for include usage.)  -lbsd
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 

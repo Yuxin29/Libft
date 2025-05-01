@@ -13,13 +13,13 @@
 #include "libft.h"
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 void	f(void *cont);
 
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
+/*
 int	main(void)
 {
 	t_list	*node_1;
@@ -49,3 +49,4 @@ int	main(void)
 	printf("%s\n", (char *)node_2->content);
 	return (0);
 }
+*/

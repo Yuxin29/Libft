@@ -6,123 +6,100 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 13:24:34 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/26 16:17:48 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/05/01 18:47:07 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-size_t	ft_count_total_strs(char const *s, char c)
+size_t	count_words(const char *s, char c)
 {
-	size_t	strs_count;
-	char	*trimed;
-	char	*temp;
+	size_t	count;
 
-	trimed = ft_strtrim(s, &c);
-	temp = trimed;
-	strs_count = 1;
-	while (*temp)
-	{
-		if ((*temp) == c)
-			strs_count++;
-		temp++;
-	}
-	free (trimed);
-	return (strs_count);
-}
-
-size_t	*ft_showlength_eachstr(char const *s, char c)
-{
-	size_t	i;
-	size_t	num_strs;
-	size_t	*str_leng;
-
-	i = 0;
-	num_strs = ft_count_total_strs(s, c);
-	str_leng = malloc(sizeof(size_t) * (num_strs));
-	if (!(str_leng))
-		return (NULL);
-	while (i < num_strs)
-	{
-		str_leng[i] = 0;
-		i++;
-	}
-	i = 0;
-	while ((*s) == c)
-		s++;
+	count = 0;
 	while (*s)
 	{
-		if (*s != c)
-			str_leng[i] += 1;
-		else if (i < num_strs - 1)
-			i++;
-		s++;
+		while (*s == c)
+			s++;
+		if (*s)
+		{
+			count++;
+			while (*s && *s != c)
+				s++;
+		}
 	}
-	return (str_leng);
+	return (count);
 }
 
-char	**ft_mem_allocate(char const *s, char c)
+size_t	word_len(const char *s, char c)
 {
-	size_t	*lengthof_eachstr;
-	size_t	n;
-	size_t	total;
-	char	**strs_of_strs_mem;
+	size_t	len;
 
-	n = 0;
-	total = ft_count_total_strs(s, c);
-	lengthof_eachstr = ft_showlength_eachstr(s, c);
-	strs_of_strs_mem = malloc(sizeof(char *) * (total + 1));
-	if (!(strs_of_strs_mem))
-		return (NULL);
-	while (n < total)
+	len = 0;
+	while (*s && *s != c)
 	{
-		strs_of_strs_mem[n] = malloc(sizeof(char) * (lengthof_eachstr[n] + 1));
-		if (!(strs_of_strs_mem[n]))
-		{
-			while (n > 0)
-			{
-				n--;
-				free (strs_of_strs_mem[n]);
-			}
-			return (NULL);
-		}
-		n++;
+		len++;
+		s++;
 	}
-	free (lengthof_eachstr);
-	strs_of_strs_mem[n] = NULL;
-	return (strs_of_strs_mem);
+	return (len);
+}
+
+char	*malloc_word(const char *start, size_t len)
+{
+	char	*word;
+	size_t	i;
+
+	word = malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		word[i] = start[i];
+		i++;
+	}
+	word[len] = '\0';
+	return (word);
+}
+
+char	*free_split(char **split, size_t filled)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < filled)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	n;
-	size_t	m;
-	size_t	num_of_subs;
-	char	**strs_of_strs;
+	char		**result;
+	size_t		index;
 
-	strs_of_strs = ft_mem_allocate(s, c);
-	num_of_subs = ft_count_total_strs(s, c);
-	n = 0;
-	m = 0;
-	while (*s == c)
-		s++;
+	index = 0;
+	if (!s)
+		return (NULL);
+	result = malloc(sizeof(char *) * count_words(s, c));
+	if (!result)
+		return (NULL);
 	while (*s)
 	{
-		if (*s != c)
+		while (*s == c)
+			s++;
+		if (*s)
 		{
-			strs_of_strs[n][m] = *s;
-			m++;
+			result[index] = malloc_word(s, word_len(s, c));
+			s += word_len(s, c);
+			if (!result[index])
+				free_split(result, index);
+			index++;
 		}
-		else if (n < num_of_subs - 1)
-		{
-			strs_of_strs[n][m] = '\0';
-			n++;
-			m = 0;
-		}
-		s++;
 	}
-	strs_of_strs[n][m] = '\0';
-	strs_of_strs[n + 1] = NULL;
-	return (strs_of_strs);
+	result[index] = NULL;
+	return (result);
 }

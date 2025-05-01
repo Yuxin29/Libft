@@ -42,7 +42,6 @@ which is suitably aligned for any built-in type.
 
 #include "libft.h"
 
-#include <stdlib.h>
 #include <stdio.h>
 
 void	*ft_calloc(size_t nmemb, size_t size);
@@ -51,8 +50,60 @@ int	main(void)
 {
 	size_t	i;
 	int		*tes1;
+
+	i = 0;
+	tes1 = calloc(20, sizeof(int));
+	if (!tes1)
+	{
+		printf("%s\n", "error");
+		return (0);
+	}
+	while (i < 20)
+	{
+		printf("%d", tes1[i]);
+		i++;
+	}
+	free (tes1);
+	return (0);
+}
+
+/*
+int	main(void)
+{
+	size_t	i;
+	int		*tes2;
+
+	i = 0;
+	tes2 = ft_calloc(18, sizeof(int));
+	if (!tes2)
+	while (i < 18)
+	{
+		printf("%d", tes2[i]);
+		i++;
+	}
+	free (tes2);
+	return (0);
+}
+
+int	main(void)
+{
+	int		*tes0;
+
+	tes0 = ft_calloc(0, 0);
+	printf("%d\n", tes0[0]);
+	free (tes0);
+	return (0);
+}
+*/
+
+/*
+int	main(void)
+{
+	size_t	i;
+	int		*tes1;
 	int		*tes2;
 	int		*tes0;
+
 	i = 0;
 	tes1 = calloc(20, sizeof(int));
 	tes2 = ft_calloc(18, sizeof(int));
@@ -80,3 +131,4 @@ int	main(void)
 	free (tes2);
 	return (0);
 }
+*/

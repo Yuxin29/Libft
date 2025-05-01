@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-#include <stdlib.h>
 #include <stdio.h>
 
 void	*f_changeto_emptied(void *cont)

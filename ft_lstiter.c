@@ -13,7 +13,6 @@
 #include "libft.h"
 
 #include <string.h>
-#include <stdlib.h>
 
 void	f(void *cont)
 {

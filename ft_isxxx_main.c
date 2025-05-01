@@ -65,21 +65,15 @@ int	main(void)
 	printf("test_isalpha\n");
 	printf("%i\n", ft_isalpha(c1));
 	printf("%i\n", ft_isalpha(c2));
-	printf("\n");
 	printf("test_isdigit\n");
 	printf("%i\n", ft_isdigit(c1));
 	printf("%i\n", ft_isdigit(c2));
-	printf("\n");
 	printf("test_isalnum\n");
 	printf("%i\n", ft_isalnum(c1));
 	printf("%i\n", ft_isalnum(c1));
 	printf("%i\n", ft_isalnum(c3));
-	printf("\n");
 	printf("test_isprint\n");
 	printf("%i\n", ft_isprint(c3));
-	printf("%i\n", isprint(c3));
 	printf("%i\n", ft_isprint(c4));
-	printf("%i\n", isprint(c4));
-	printf("\n");
 	return (0);
 }

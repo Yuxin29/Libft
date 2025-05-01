@@ -6,7 +6,7 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 13:44:00 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/27 13:46:23 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/05/01 16:42:20 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int		i;
+	t_list	*temp;
 
-	i = 1;
-	while (lst->next)
+	i = 0;
+	temp = lst;
+	while (temp)
 	{
-		lst = lst->next;
+		temp = temp->next;
 		i++;
 	}
 	return (i);

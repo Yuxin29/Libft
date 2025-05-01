@@ -12,13 +12,10 @@
 
 #include "libft.h"
 
-#include <stdlib.h>
-
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*return_v;
-
-	return_v = malloc(sizeof(t_list) * 1);
+	if (!lst)
+		return (NULL);
 	while (lst->next)
 	{
 		lst = lst->next;

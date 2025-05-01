@@ -34,7 +34,7 @@ RETURN VALUE
        The converted value or 0 on error.
 */
 
-#include <stdlib.h>
+#include "libft.h"
 #include <stdio.h>
 
 int	ft_atoi(const char *nptr);

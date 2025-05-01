@@ -11,12 +11,11 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	ft_putnbr_fd_positive(int n, int fd)
 {
 	char	c;
-	
+
 	if (n > 9)
 		ft_putnbr_fd_positive(n / 10, fd);
 	c = (n % 10) + '0';

@@ -31,9 +31,10 @@ RETURN VALUE
        to indicate the cause of the error.
 */
 
+#include "libft.h"
+
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 char	*ft_strdup(const char *s);
 

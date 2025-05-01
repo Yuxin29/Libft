@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-#include <stdlib.h>
 #include <stdio.h>
 
 size_t	ft_trim_start(char const *s1, char const *set);

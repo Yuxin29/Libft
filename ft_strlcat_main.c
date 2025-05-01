@@ -51,13 +51,15 @@ RETURN VALUES
      dst is not a proper “C” string).  
      The check exists to prevent potential security problems in incorrect code.
 
+//(See libbsd(7) for include usage.)  -lbsd
+
 */
 
-#include <stddef.h>
+#include "libft.h"
+
 #include <string.h>
 #include <stdio.h>
 #include <bsd/string.h>
-//(See libbsd(7) for include usage.)  -lbsd
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
@@ -78,6 +80,5 @@ int	main(void)
 	printf("%s\n", dst2);
 	printf("%zu\n", ft_strlcat(dst2, src, num));
 	printf("%s\n", dst2);
-	//strlcpy("", "abc", 0);
 	return (0);
 }

@@ -78,5 +78,6 @@ int	main(void)
 	printf("%s\n", dst2);
 	printf("%zu\n", ft_strlcat(dst2, src, num));
 	printf("%s\n", dst2);
+	//strlcpy("", "abc", 0);
 	return (0);
 }

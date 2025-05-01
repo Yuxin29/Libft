@@ -52,12 +52,18 @@ int	main(void)
 	size_t	i;
 	int		*tes1;
 	int		*tes2;
-
+	int		*tes0;
 	i = 0;
 	tes1 = calloc(20, sizeof(int));
 	tes2 = ft_calloc(18, sizeof(int));
+	tes0 = ft_calloc(0, 0);
+	printf("%d\n", tes0[0]);
+	free (tes0);
 	if ((!tes1) || (!tes2))
+	{
+		printf("%s\n", "error");
 		return (0);
+	}
 	while (i < 20)
 	{
 		printf("%d", tes1[i]);

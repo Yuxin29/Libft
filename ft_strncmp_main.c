@@ -47,8 +47,10 @@ int	main(void)
 
 	s1 = "hellosummer";
 	s2 = "aelloseven";
-	n = -1;
+	n = 4;
 	printf("%i\n", strncmp(s1, s2, n));
 	printf("%i\n", ft_strncmp(s1, s2, n));
+	printf("%i\n", strncmp("abc\200", "abc\5", 6));
+	printf("%i\n", ft_strncmp("abc\200", "abc\0", 6));
 	return (0);
 }

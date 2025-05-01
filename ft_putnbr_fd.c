@@ -10,50 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_power(int nb, int power)
+void	ft_putnbr_fd_positive(int n, int fd)
 {
-	int	multi;
-
-	multi = 1;
-	if (power < 0)
-		return (0);
-	if ((nb == 0) && (power == 0))
-		return (1);
-	while (power >= 1)
-	{
-		multi *= nb;
-		power--;
-	}
-	return (multi);
+	char	c;
+	
+	if (n > 9)
+		ft_putnbr_fd_positive(n / 10, fd);
+	c = (n % 10) + '0';
+	ft_putchar_fd(c, fd);
 }
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int		tens;
-	int		first;
-	int		nt;
-	int		i;
-	char	c;
-
-	tens = 1;
-	nt = n;
-	while (n / 10 > 1)
+	if (n == -2147483648)
 	{
-		n /= 10;
-		tens++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	i = 0;
-	while (nt / 10 >= 1)
+	if (n < 0 && n != -2147483648)
 	{
-		first = nt / ft_power(10, tens - i - 1);
-		c = first + '0';
-		write(fd, &c, 1);
-		nt = nt % ft_power(10, tens - i - 1);
-		i++;
+		write(fd, "-", 1);
+		n = -n;
 	}
-	c = nt + '0';
-	write(fd, &c, 1);
+	ft_putnbr_fd_positive(n, fd);
 }

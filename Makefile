@@ -14,7 +14,7 @@ HEADERS := libft.h
 NAME := libft.a
 CFLAGS := -Wall -Wextra -Werror
 
-SOURCES := ft_isalpha.c \
+SRCS := ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
 	ft_isascii.c \
@@ -49,7 +49,7 @@ SOURCES := ft_isalpha.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 
-BONUS_SOURCES := ft_lstnew.c \
+BONUS_SRCS := ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -59,10 +59,10 @@ BONUS_SOURCES := ft_lstnew.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 
-OBJECTS := $(SOURCES:%.c=%.o)
-BONUS_OBJECTS := $(BONUS_SOURCES:%.c=%.o)
+OBJS := $(SRCS:%.c=%.o)
+BONUS_OBJS := $(BONUS_SRCS:%.c=%.o)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJS)
 	ar -rcs $@ $^
 
 %.o: %.c $(HEADERS)
@@ -71,16 +71,16 @@ $(NAME): $(OBJECTS)
 all: $(NAME)
 
 clean:
-	rm -f $(OBJECTS) $(BONUS_OBJECTS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus: $(OBJECTS) $(BONUS_OBJECTS)
+bonus: $(OBJS) $(BONUS_OBJS)
 	ar -rcs $(NAME) $^
-
+	
 test: test.c bonus
 	cc $< $(NAME) -o $@ -lbsd $(CFLAGS)
 	./$@

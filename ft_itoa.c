@@ -43,18 +43,15 @@ static char	*ft_itoa_positive(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*posi;
 	char	*temp;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
-		posi = ft_itoa_positive(-n);
-		if (!posi)
+		temp = ft_strjoin("-", ft_itoa_positive(-n));
+		if (!temp)
 			return (NULL);
-		temp = ft_strjoin("-", posi);
-		free (posi);
 		return (temp);
 	}
 	return (ft_itoa_positive(n));

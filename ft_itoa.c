@@ -6,74 +6,36 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 13:50:31 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/20 14:31:01 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/05/03 15:19:49 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
-{	
-	int	i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-int	ft_iterative_power(int nb, int power)
+static char	*ft_itoa_positive(int n)
 {
-	int	multi;
-
-	multi = 1;
-	if (power < 0)
-		return (0);
-	if ((nb == 0) && (power == 0))
-		return (1);
-	while (power >= 1)
-	{
-		multi *= nb;
-		power--;
-	}
-	return (multi);
-}
-
-int	ft_count_int(int n)
-{
-	int	num;
-
-	num = 1;
-	while (n / 10 >= 1)
-	{
-		n /= 10;
-		num++;
-	}
-	return (num);
-}
-
-char	*ft_itoa_positive(int n)
-{
+	char	reverse[12];
 	int		i;
-	int		size;
+	int		j;
 	char	*result;
-	int		power;
 
 	i = 0;
-	size = ft_count_int(n);
-	result = malloc(sizeof(char) * (size + 1));
-	if (!(result))
-		return (NULL);
-	while (i < size)
+	j = 0;
+	if (n == 0)
+		return (ft_strdup("0"));
+	while (n > 0)
 	{
-		power = ft_iterative_power(10, (size - i - 1));
-		result[i] = n / power + '0';
-		n = n % power;
+		reverse[i] = (n % 10) + '0';
 		i++;
+		n /= 10;
+	}
+	result = malloc(i + 1);
+	if (!result)
+		return (NULL);
+	while (j < i)
+	{
+		result[j] = reverse[i - j - 1];
+		j++;
 	}
 	result[i] = '\0';
 	return (result);
@@ -81,19 +43,19 @@ char	*ft_itoa_positive(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*minus;
-	char	*special;
+	char	*posi;
+	char	*temp;
 
-	minus = "-";
 	if (n == -2147483648)
-	{
-		special = malloc(sizeof(char) * 12);
-		if (!(special))
-			return (NULL);
-		ft_strcpy(special, "-2147483648");
-		return (special);
-	}	
+		return (ft_strdup("-2147483648"));
 	if (n < 0)
-		return (ft_strjoin(minus, ft_itoa_positive(-n)));
+	{
+		posi = ft_itoa_positive(-n);
+		if (!posi)
+			return (NULL);
+		temp = ft_strjoin("-", posi);
+		free (posi);
+		return (temp);
+	}
 	return (ft_itoa_positive(n));
 }

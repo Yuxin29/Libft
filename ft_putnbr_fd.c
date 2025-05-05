@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_putnbr_fd_positive(int n, int fd)
+static void	ft_putnbr_fd_positive(int n, int fd)
 {
 	char	c;
 
@@ -31,7 +31,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 0 && n != -2147483648)
 	{
-		write(fd, "-", 1);
+		ft_putchar_fd('-', fd);
 		n = -n;
 	}
 	ft_putnbr_fd_positive(n, fd);

@@ -6,7 +6,7 @@
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 21:18:22 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/16 18:03:17 by yuwu             ###   ########.fr       */
+/*   Updated: 2025/05/02 16:25:39 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	len_little;
 
-	if (len == 0)
-		return (NULL);
+	if (!(*little))
+		return ((char *)big);
 	s = 0;
 	len_little = ft_strlen(little);
-	if (!(*little))
-		return ((char *)(big));
-	while ((*big) && (s <= len - len_little))
+	while ((*big) && (s + len_little <= len))
 	{
 		if (*little == *big)
 		{
@@ -37,5 +35,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		s++;
 		big++;
 	}
-	return ((void *)0);
+	return (NULL);
 }

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 16:31:33 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/27 16:44:14 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/27 12:03:18 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/27 12:21:08 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+t_list	*ft_lstnew(void *content)
 {
-	if ((!lst) || (!del))
-		return ;
-	del(lst->content);
-	free (lst);
-}	
+	t_list	*r_value;
 
-/*
-Parameters 
-	lst: The node to free.
-	del: The address of the function used to delete the content.
-Description 
-Takes a node as parameter and frees its content using the function ’del’. 
-Free the node itself but does NOT free the next node.
-*/
+	r_value = malloc(sizeof(t_list) * 1);
+	if (!r_value)
+		return (NULL);
+	r_value->content = content;
+	r_value->next = NULL;
+	return (r_value);
+}

@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 13:44:00 by yuwu              #+#    #+#             */
-/*   Updated: 2025/05/01 16:42:20 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/27 14:25:34 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/27 14:28:22 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int		i;
-	t_list	*temp;
-
-	i = 0;
-	temp = lst;
-	while (temp)
-	{
-		temp = temp->next;
-		i++;
-	}
-	return (i);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

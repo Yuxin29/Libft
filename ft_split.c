@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	count_words(const char *s, char c)
+static size_t	count_words(const char *s, char c)
 {
 	size_t	count;
 
@@ -31,7 +31,7 @@ size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-size_t	word_len(const char *s, char c)
+static size_t	word_len(const char *s, char c)
 {
 	size_t	len;
 
@@ -44,7 +44,7 @@ size_t	word_len(const char *s, char c)
 	return (len);
 }
 
-char	*malloc_word(const char *start, size_t len)
+static char	*malloc_word(const char *start, size_t len)
 {
 	char	*word;
 	size_t	i;
@@ -62,7 +62,7 @@ char	*malloc_word(const char *start, size_t len)
 	return (word);
 }
 
-char	*free_split(char **split, size_t filled)
+static char	**free_split(char **split, size_t filled)
 {
 	size_t	i;
 
@@ -73,6 +73,7 @@ char	*free_split(char **split, size_t filled)
 		i++;
 	}
 	free(split);
+	split = NULL;
 	return (NULL);
 }
 
@@ -84,7 +85,7 @@ char	**ft_split(char const *s, char c)
 	index = 0;
 	if (!s)
 		return (NULL);
-	result = malloc(sizeof(char *) * count_words(s, c));
+	result = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!result)
 		return (NULL);
 	while (*s)
@@ -94,9 +95,9 @@ char	**ft_split(char const *s, char c)
 		if (*s)
 		{
 			result[index] = malloc_word(s, word_len(s, c));
-			s += word_len(s, c);
 			if (!result[index])
-				free_split(result, index);
+				return (free_split(result, index));
+			s += word_len(s, c);
 			index++;
 		}
 	}

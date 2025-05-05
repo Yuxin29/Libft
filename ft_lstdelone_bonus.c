@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_main.c                                   :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 13:02:33 by yuwu              #+#    #+#             */
-/*   Updated: 2025/04/27 13:05:56 by yuwu             ###   ########.fr       */
+/*   Created: 2025/04/27 16:31:33 by yuwu              #+#    #+#             */
+/*   Updated: 2025/04/27 16:44:14 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
-t_list	*ft_lstnew(void *content);
-
-int	main(void)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list	*result;
-
-	result = ft_lstnew("test");
-	printf("%s\n", (char *)result->content);
-	return (0);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free (lst);
 }
